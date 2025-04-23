@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Tagvalidation]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="SampMax(failed)">
+    <classes>
+      <class name="sampMax_testcase.TC18_Pairing_SmartConfig_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="removerepair"/>
+          <include name="beforeSuite"/>
+          <include name="startTestCase"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC18_Pairing_SmartConfig_Max -->
+      <class name="sampMax_testcase.TC23_SmartConfig_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="startTestCase"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="removerepair"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC23_SmartConfig_Max -->
+      <class name="sampMax_testcase.TC09_Analytics_Max">
+        <methods>
+          <include name="startTestCase"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="removerepair"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC09_Analytics_Max -->
+      <class name="sampMax_testcase.TC32_wifi_with_router_Factory_Reset_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="startTestCase"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="removerepair"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC32_wifi_with_router_Factory_Reset_Max -->
+      <class name="sampMax_testcase.TC17_Pairing_BlewithRouter_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="removerepair"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="startTestCase"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC17_Pairing_BlewithRouter_Max -->
+      <class name="sampMax_testcase.TC11_Analytics_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="removerepair"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC11_Analytics_Max -->
+      <class name="sampMax_testcase.TC26_Schedular_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="schedule"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC26_Schedular_Max -->
+      <class name="sampMax_testcase.TC10_Analytics_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="removerepair"/>
+          <include name="startTestCase"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC10_Analytics_Max -->
+      <class name="sampMax_testcase.TC20_Pairing_WifiwithoutRouter_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="removerepair"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC20_Pairing_WifiwithoutRouter_Max -->
+      <class name="sampMax_testcase.TC30_wifi_with_router_Factory_Reset_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="startTestCase"/>
+          <include name="afterTest"/>
+          <include name="removerepair"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC30_wifi_with_router_Factory_Reset_Max -->
+      <class name="sampMax_testcase.TC12_DeviceSettings_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="removerepair"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC12_DeviceSettings_Max -->
+      <class name="sampMax_testcase.TC31_wifi_with_router_Factory_Reset_Max">
+        <methods>
+          <include name="removerepair"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC31_wifi_with_router_Factory_Reset_Max -->
+      <class name="sampMax_testcase.TC27_Schedular_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="startTestCase"/>
+          <include name="afterTest"/>
+          <include name="schedule"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC27_Schedular_Max -->
+      <class name="sampMax_testcase.TC13_DeviceSettings_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="startTestCase"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="removerepair"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC13_DeviceSettings_Max -->
+      <class name="sampMax_testcase.TC01_SignUp_Max">
+        <methods>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC01_SignUp_Max -->
+      <class name="sampMax_testcase.TC15_DeviceSettings_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="removerepair"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC15_DeviceSettings_Max -->
+      <class name="sampMax_testcase.TC19_Pairing_WifiwithRouter_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="removerepair"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC19_Pairing_WifiwithRouter_Max -->
+      <class name="sampMax_testcase.TC14_DeviceSettings_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="startTestCase"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="removerepair"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC14_DeviceSettings_Max -->
+      <class name="sampMax_testcase.TC22_BleWithRouter_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="removerepair"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC22_BleWithRouter_Max -->
+      <class name="sampMax_testcase.TC24_WifiWithRouter_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="removerepair"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC24_WifiWithRouter_Max -->
+      <class name="sampMax_testcase.TC28_Schedular_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="schedule"/>
+          <include name="startTestCase"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC28_Schedular_Max -->
+      <class name="sampMax_testcase.TC25_WIfiWithout_router_Max">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="startTestCase"/>
+          <include name="beforeTest"/>
+          <include name="removerepair"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- sampMax_testcase.TC25_WIfiWithout_router_Max -->
+    </classes>
+  </test> <!-- SampMax(failed) -->
+</suite> <!-- Failed suite [Tagvalidation] -->

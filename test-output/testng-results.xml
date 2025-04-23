@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-04-05T17:25:53 IST" name="Default suite" finished-at="2025-04-05T17:39:10 IST" duration-ms="797358">
+    <groups>
+    </groups>
+    <test started-at="2025-04-05T17:25:53 IST" name="Default test" finished-at="2025-04-05T17:39:10 IST" duration-ms="797358">
+      <class name="sampMax_testcase.TC29_Schedular_Max">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:25:52 IST" name="beforeSuite" finished-at="2025-04-05T17:25:53 IST" duration-ms="254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:25:53 IST" name="beforeTest" finished-at="2025-04-05T17:25:53 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="startTestCase()[pri:0, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:25:53 IST" name="startTestCase" finished-at="2025-04-05T17:25:53 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTestCase -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:25:53 IST" name="beforeMethod" finished-at="2025-04-05T17:25:53 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="schedule()[pri:28, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:25:53 IST" name="schedule" finished-at="2025-04-05T17:39:08 IST" duration-ms="795511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- schedule -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:39:08 IST" name="afterMethod" finished-at="2025-04-05T17:39:10 IST" duration-ms="1813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:39:10 IST" name="afterTest" finished-at="2025-04-05T17:39:10 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:sampMax_testcase.TC29_Schedular_Max@2fd1433e]" started-at="2025-04-05T17:39:10 IST" name="afterSuite" finished-at="2025-04-05T17:39:10 IST" duration-ms="321" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.io.PrintStream.close()" because "this.fileOut" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.io.PrintStream.close()" because "this.fileOut" is null
+at wrappers.MobileAppWrappers.afterSuite(MobileAppWrappers.java:82)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:410)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- sampMax_testcase.TC29_Schedular_Max -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

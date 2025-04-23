@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="classes" name="Failed suite [ParallelTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="classes" name="TestClass1(failed)">
+    <classes>
+      <class name="utils.ContinuousLogReceiver">
+        <methods>
+          <include name="runner"/>
+        </methods>
+      </class> <!-- utils.ContinuousLogReceiver -->
+    </classes>
+  </test> <!-- TestClass1(failed) -->
+  <test thread-count="2" parallel="classes" name="TestClass2(failed)">
+    <classes>
+      <class name="testcases_signIn_up_accountsinfo_module.TC01_SignUp">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="signUp"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+          <include name="startTestCase"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- testcases_signIn_up_accountsinfo_module.TC01_SignUp -->
+    </classes>
+  </test> <!-- TestClass2(failed) -->
+</suite> <!-- Failed suite [ParallelTestSuite] -->
