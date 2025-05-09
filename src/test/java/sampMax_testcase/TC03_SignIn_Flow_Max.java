@@ -10,6 +10,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -19,6 +20,7 @@ public class TC03_SignIn_Flow_Max extends MobileAppWrappers{
 	HomePage homepage;
 	OtpPage otppage;
 	SignUpPage signuppage;
+	StoreLogPage storelog;
 
 	@BeforeClass
 	public void startTestCase() {
@@ -32,13 +34,12 @@ public class TC03_SignIn_Flow_Max extends MobileAppWrappers{
 		landingpage = new LandingPage(driver);
 		otppage = new OtpPage(driver);
 		signuppage =new SignUpPage(driver);
+		storelog= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-//		readwrite.read();
 		
-		//signuppage.uninstall_reinstall();
 		landingpage.clickSignInButton();
 		double rand=Math.random()*100000000;
 		signinpage.enterUserName("user"+(int)rand);
@@ -48,6 +49,7 @@ public class TC03_SignIn_Flow_Max extends MobileAppWrappers{
 		readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			e.printStackTrace();
 			readwrite.closePort();
 			fail(e);

@@ -11,6 +11,7 @@ import pages.OTA_Status_monitor;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import pages.Szephyr_info_Page;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
@@ -26,6 +27,7 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 	Szephyr_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signinpage;
+	StoreLogPage storelog;
 		
 	
 	@BeforeClass
@@ -46,16 +48,12 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new Szephyr_info_Page(driver);
+		storelog= new StoreLogPage(driver);
 		
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
-		
 		
 		///CONNECTIVITY_MOD_3_TC_1///   STA_connectivity establishment
 		adddevicepage.pair(3);	
@@ -157,6 +155,7 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 		 readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);

@@ -100,27 +100,44 @@ public class Schedularpage extends GenericWrappers {
 
 	@FindBy(xpath = "//android.widget.TextView[@text=\"testuser008_1\"]")
 	private WebElement userName;
+	
+	private WebElement userName(String username) {
+		return driver.findElement(By.xpath("//android.widget.TextView[@text='"+username+"']"));
+		
+	}
 
 	public String scheduleDeletedtoast = loadProp("thisScheduleHasBeenDeleted");
 
 //	com.iinvsys.szephyr:id/ScrollPicker_Hours
-	String x1 = "//*[@resource-id='ScrollPicker_Hours']";
-	String x2 = "//*[@resource-id='ScrollPicker_Minutes']";
-	String x3 = "//*[@resource-id='ScrollPicker_AM_PM']";
-
-	String resourseId1 = "ScrollPicker_Hours";
-	String resourseId2 = "ScrollPicker_Minutes";
-	String resourseId3 = "ScrollPicker_AM_PM";
+	String x1;
+	String x2;
+	String x3;
+	String resourseId1;
+	String resourseId2;
+	String resourseId3;
+	
+	public void setContext(String type) {
+        this.x1 = "//*[@resource-id='ScrollPicker_Hours_" + type + "']";
+        this.x2 = "//*[@resource-id='ScrollPicker_Minutes_" + type + "']";
+        this.x3 = "//*[@resource-id='ScrollPicker_AM_PM_" + type + "']";
+        this.resourseId1= "ScrollPicker_Hours_"+ type +"";
+        this.resourseId2= "ScrollPicker_Minutes_"+type +"";
+        this.resourseId3= "ScrollPicker_AM_PM_"+type +"";
+    }
 
 
 
 	public void createSchedules(int timetostart, int intervals, int gapBetweenNextSchedule) {
 		// Get the current time and calculate the start time for the first schedule
+		
 		LocalTime currentTime = LocalTime.now();
 		LocalTime timet = currentTime.plusMinutes(timetostart);
 
+		
+		
 		// Generate schedule times based on intervals and gap
 		List<LocalTime> scheduleTimes = generateSchedule(timet, intervals, gapBetweenNextSchedule);
+		//List<LocalTime> scheduleTimesEnd = generateSchedule(timet, intervals, gapBetweenNextSchedule);
 
 		// Loop through each time and create the schedule
 		for (LocalTime time : scheduleTimes) {
@@ -134,21 +151,42 @@ public class Schedularpage extends GenericWrappers {
 			int minute = time.getMinute();
 			String formattedMinute = String.format("%02d", minute);
 			String amPm = time.getHour() >= 12 ? "PM" : "AM";
-
+			clickbyXpath(plusIcon, "plusbutton");
 			System.out.println("Creating schedule for: " + hour + ":" + formattedMinute + " " + amPm);
 
 			// Navigate to the screen to create a schedule
-			clickbyXpath(plusIcon, "plusbutton");
+			
 
 			// Scroll to the desired time using the method that scrolls until the element is
 			// visible
+			setContext("start");
 			selectTimeUsingBounds(hour, minute, amPm);
 
-			clickonDuration();
-			// Save the schedule
-			saveSchedule();
+			// clickonDuration();
+			
 
 			System.out.println("Schedule created for: " + hour + ":" + formattedMinute + " " + amPm);
+			LocalTime Endtime=time.plusMinutes(gapBetweenNextSchedule);
+			int hourEnd = Endtime.getHour() % 12;
+			if (hourEnd == 0) {
+				hourEnd = 12; // Convert 0 hour to 12 for 12-hour format
+			}
+
+			// Format the minute as two digits
+			int minuteEnd = Endtime.getMinute();
+			String formattedMinuteEnd = String.format("%02d", minute);
+			
+			setContext("end");
+			
+			
+				// Scroll to the desired time using the method that scrolls until the element is
+				// visible
+				selectTimeUsingBounds(hourEnd, minuteEnd, amPm);
+				// Save the schedule
+				saveSchedule();
+				System.out.println("Schedule created for: " + hour + ":" + formattedMinuteEnd + " " + amPm);
+			
+			
 		}
 	}
 
@@ -196,6 +234,7 @@ public class Schedularpage extends GenericWrappers {
 
 	private void saveSchedule() {
 		// Click the save button after setting the time
+		scroll2();
 		clickbyXpath(savebtn, "saveschedule");
 
 		// Validate if the schedule is saved successfully
@@ -418,7 +457,7 @@ public class Schedularpage extends GenericWrappers {
 	public void backToHomepage() {
 
 		clickbyXpath(backButton, "back button");
-		verifyTextContainsByXpath(userName, loadProp("USERNAMEINAPP"), "DeviceName");
+		verifyTextContainsByXpath(userName(loadProp("USERNAMEINAPP")), loadProp("USERNAMEINAPP"), " DeviceName ");
 
 	}
 
@@ -461,5 +500,20 @@ public class Schedularpage extends GenericWrappers {
 
 		verifyTextContainsByXpath(acturnoffdesc, "Please ensure sZephyr is switched ON prior to operating your AC remote", "OFF state");
 	}
+	
+	public void scroll2() {
+		int startX = driver.manage().window().getSize().getWidth() / 8;
+		int startY = driver.manage().window().getSize().getHeight() / 2;
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+		Sequence scroll = new Sequence(finger, 0);
+		int endY = (int) (driver.manage().window().getSize().getHeight());
+		scroll.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+		scroll.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+		scroll.addAction(
+				finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), startX, 0));
+		scroll.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		driver.perform(List.of(scroll));
+
+}
 
 }

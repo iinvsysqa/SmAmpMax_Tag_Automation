@@ -11,6 +11,7 @@ import pages.OTA_Status_monitor;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import pages.Szephyr_info_Page;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
@@ -26,6 +27,7 @@ public class TC21_BlewithoutRouter_Max extends MobileAppWrappers{
 	Szephyr_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signuppage;	
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -45,20 +47,15 @@ public class TC21_BlewithoutRouter_Max extends MobileAppWrappers{
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new Szephyr_info_Page(driver);
+		storelog= new StoreLogPage(driver);
 		
-		//CONNECTIVITY_MOD_1_TC_01//////////BLE connectivity establishment//////////////////////////////////////
 	
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 			
 		
 		readwrite.openPort();
-		Thread.sleep(3000);
-		readwrite.write("reboot\r");
-//		readwrite.read();
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
-		
+				
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
@@ -76,8 +73,6 @@ public class TC21_BlewithoutRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdeviceresettoast();
 		devicemenupage.AddDevicePagedisplayed();
 		
-		
-		///CONNECTIVITY_MOD_1_TC_02//////APP kill and re Open//////////////////////////////////////////////////////////
         
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -107,7 +102,6 @@ public class TC21_BlewithoutRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdeviceresettoast();
 		devicemenupage.AddDevicePagedisplayed();
 		
-//		///CONNECTIVITY_MOD_1_TC_03--5 times App ON/OFF////////////////////////////////////////////////////////////////
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -132,6 +126,7 @@ public class TC21_BlewithoutRouter_Max extends MobileAppWrappers{
 		 readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);

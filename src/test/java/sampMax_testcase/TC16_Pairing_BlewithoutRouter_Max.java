@@ -9,6 +9,7 @@ import pages.HomePage;
 import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -20,6 +21,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -40,7 +42,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		
+		storelog= new StoreLogPage(driver);		
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -54,11 +56,9 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 		
 		homepage.clickONOFFButton();
 		Thread.sleep(2000);
-//		homepage.VerifyONdesc();
 		
 		homepage.clickONOFFButton();
 		Thread.sleep(2000);
-//		homepage.VerifyOFFdesc();
 		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
@@ -73,17 +73,15 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		homepage.clickONOFFButton();
-//		homepage.VerifyONdesc();
 		homepage.clickONOFFButton();
-//		homepage.VerifyOFFdesc();
 				
 		homepage.clickMenuBarButton();
 		devicemenupage.clickLogoutButton();
 		devicemenupage.clickLogoutConfirmationButton();
 		landingpage.clickSignInButton();
-		loginpage.enterUserName("testuser008@gmail.com");
+		loginpage.enterUserName(loadProp("USERNAME"));
 		loginpage.clickSignInButton();
 		otppage.verifyOTPVerificationTitle("OTP Verification");
 		otppage.enterOTPField1("1");
@@ -91,8 +89,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 		otppage.enterOTPField3("3");
 		otppage.enterOTPField4("4");
 		otppage.submitButton();
-//		homepage.VerifyOFFdesc();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
 		devicemenupage.clickRemoveDevicePopupYesButton();
@@ -104,11 +101,9 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		homepage.clickONOFFButton();
-//		homepage.VerifyONdesc();
 		homepage.clickONOFFButton();
-//		homepage.VerifyOFFdesc();
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
 		devicemenupage.clickRemoveDevicePopupYesButton();
@@ -118,6 +113,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
         readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);

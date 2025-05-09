@@ -13,6 +13,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -25,6 +26,7 @@ public class TC01_SignUp_Max extends MobileAppWrappers{
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage storelog;
 
 	@BeforeClass
 	public void startTestCase() {
@@ -41,6 +43,7 @@ public class TC01_SignUp_Max extends MobileAppWrappers{
 		landingpage = new LandingPage(driver);
 		otppage = new OtpPage(driver);
 		signuppage =new SignUpPage(driver);
+		storelog= new StoreLogPage(driver);
 //		GetAppLog applog= new GetAppLog();
 //		applog.startLogProcess();
 		
@@ -54,12 +57,11 @@ public class TC01_SignUp_Max extends MobileAppWrappers{
 		readwrite.openPort();
 
 		
-		signuppage.uninstall_reinstall();
 		landingpage.clickSignUpLink();
 
 		
-		signuppage.enterUserName("testuser");
-		signuppage.enterEmailId("testuser@yopmail.com");
+		signuppage.enterUserName(loadProp("USERNAME"));
+		signuppage.enterEmailId(loadProp("EMAILID"));
 		signuppage.clickSignUpTCCheckBox();
 		signuppage.clickSignUpButton();
 		//readwrite.write("button_press\r");
@@ -68,9 +70,11 @@ public class TC01_SignUp_Max extends MobileAppWrappers{
 		readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			e.printStackTrace();
 			readwrite.closePort();
 			Assert.fail("Failed due to this exception", e);
+			
 		}
 
 	}

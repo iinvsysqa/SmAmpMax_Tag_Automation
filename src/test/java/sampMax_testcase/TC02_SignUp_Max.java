@@ -13,6 +13,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -25,6 +26,7 @@ public class TC02_SignUp_Max extends MobileAppWrappers{
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage storelog;
 	
 
 	@BeforeClass
@@ -39,11 +41,12 @@ public class TC02_SignUp_Max extends MobileAppWrappers{
 		landingpage = new LandingPage(driver);
 		otppage = new OtpPage(driver);
 		signuppage =new SignUpPage(driver);
+		storelog = new StoreLogPage(driver);
+		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
 		
-		signuppage.uninstall_reinstall();
 		landingpage.clickSignUpLink();
 		double rand=Math.random()*10000000;
 		signuppage.enterUserName("testuser"+(int)rand);
@@ -60,6 +63,7 @@ public class TC02_SignUp_Max extends MobileAppWrappers{
 		readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			e.printStackTrace();
 			readwrite.closePort();
 			fail(e);

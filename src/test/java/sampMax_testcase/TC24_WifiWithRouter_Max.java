@@ -11,6 +11,7 @@ import pages.OTA_Status_monitor;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import pages.Szephyr_info_Page;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
@@ -25,7 +26,8 @@ public class TC24_WifiWithRouter_Max extends MobileAppWrappers{
 	DeviceMenuPage devicemenupage;
 	Szephyr_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
-		SignUpPage signpupage;
+	SignUpPage signpupage;
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -49,22 +51,19 @@ public class TC24_WifiWithRouter_Max extends MobileAppWrappers{
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new Szephyr_info_Page(driver);
+		storelog= new StoreLogPage(driver);
 	
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
-		
 		
 		adddevicepage.pair(4);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
+		Thread.sleep(8000);
 		adddevicepage.staConnectivityCheck();
 		homepage.clickONOFFButton();
 		
@@ -75,9 +74,10 @@ public class TC24_WifiWithRouter_Max extends MobileAppWrappers{
 		homepage.getVoltvalue();
 		homepage.getPowervalue();
 		homepage.killandopen();
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		
 		adddevicepage.ClickOkButtonBLEpopUP();
+		Thread.sleep(3000);
 		adddevicepage.staConnectivityCheck();
 		
 		for(int i=0;i<11;i++) {
@@ -96,6 +96,7 @@ public class TC24_WifiWithRouter_Max extends MobileAppWrappers{
 		 readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);

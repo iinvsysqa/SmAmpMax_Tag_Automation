@@ -9,6 +9,7 @@ import pages.HomePage;
 import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -20,6 +21,7 @@ public class TC18_Pairing_SmartConfig_Max extends MobileAppWrappers{
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
+	StoreLogPage storelog;
 
 	@BeforeClass
 	public void startTestCase() {
@@ -38,6 +40,7 @@ public class TC18_Pairing_SmartConfig_Max extends MobileAppWrappers{
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
+		storelog= new StoreLogPage(driver);
 
 	 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
@@ -78,7 +81,7 @@ public class TC18_Pairing_SmartConfig_Max extends MobileAppWrappers{
 		devicemenupage.clickLogoutButton();
 		devicemenupage.clickLogoutConfirmationButton();
 		landingpage.clickSignInButton();
-		loginpage.enterUserName(loadProp("EMAILID"));
+		loginpage.enterUserName(loadProp("USERNAME"));
 		loginpage.clickSignInButton();
 		otppage.verifyOTPVerificationTitle("OTP Verification");
 		otppage.enterOTPField1("1");
@@ -87,7 +90,7 @@ public class TC18_Pairing_SmartConfig_Max extends MobileAppWrappers{
 		otppage.enterOTPField4("4");
 		otppage.submitButton();
 		
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 //		homepage.VerifyOFFdesc();
 		adddevicepage.blepermissionokpopup();
 		homepage.clickMenuBarButton();
@@ -98,6 +101,7 @@ public class TC18_Pairing_SmartConfig_Max extends MobileAppWrappers{
 		readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);

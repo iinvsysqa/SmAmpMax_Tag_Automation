@@ -10,6 +10,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -22,6 +23,7 @@ public class TC30_wifi_with_router_Factory_Reset_Max extends MobileAppWrappers{
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage storelog;
 
 	@BeforeClass
 	public void startTestCase() {
@@ -43,15 +45,11 @@ public class TC30_wifi_with_router_Factory_Reset_Max extends MobileAppWrappers{
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
+		storelog= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
-
 		adddevicepage.pair(4);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
@@ -71,11 +69,9 @@ public class TC30_wifi_with_router_Factory_Reset_Max extends MobileAppWrappers{
 
 		homepage.clickONOFFButton();
 		Thread.sleep(2000);
-//		homepage.VerifyONdesc();
 		
 		homepage.clickONOFFButton();
 		Thread.sleep(2000);
-//		homepage.VerifyOFFdesc();
 
 		homepage.clickMenuBarButton();
 		devicemenupage.clickDeviceSettingsButton();
@@ -86,6 +82,7 @@ public class TC30_wifi_with_router_Factory_Reset_Max extends MobileAppWrappers{
 		 readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);

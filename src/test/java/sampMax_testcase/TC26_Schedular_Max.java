@@ -4,13 +4,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pages.AddDevicePage;
-import pages.Analytics;
+import pages.AnalyticsPage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
 import pages.LandingPage;
 import pages.OtpPage;
 import pages.Schedularpage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -23,7 +24,8 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	Schedularpage schedulepage;
-	Analytics analytics;
+	AnalyticsPage analyticspage;
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -42,7 +44,8 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 		adddevicepage= new AddDevicePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		schedulepage=new Schedularpage(driver);
-		analytics=new Analytics(driver);
+		analyticspage=new AnalyticsPage(driver);
+		storelog= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -51,25 +54,23 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
-		analytics.navigateAnalyticsPage();
-		analytics.getenergydurationvalue();
+		analyticspage.navigateAnalyticsPage();
+		analyticspage.getenergydurationvalue();
 		schedulepage.backToHomepage();
 		schedulepage.clickSchedulebtn();
 		schedulepage.createSchedules(3, 1, 1);// mention the time to start ,how many schedules need to keep,interval
 												// between next schedule
 
-//		schedulepage.backToHomepage();
-		schedulepage.disableschedule(0);
+		schedulepage.backToHomepage();
+//		schedulepage.disableschedule(0);
 
 		Thread.sleep(5 * 60 * 1000);// set thread values based on schedule duration kept .
-//		analytics.navigateAnalyticsPage();
-//		analytics.checkenrgyduration(1);
-//		schedulepage.backToHomepage();
-//		schedulepage.clickSchedulebtn();
-//
-//		schedulepage.deleteschedule();
-//		schedulepage.backToHomepage();
-//		schedulepage.checkOffState();
+		analyticspage.navigateAnalyticsPage();
+		analyticspage.checkenrgyduration(1);
+		schedulepage.backToHomepage();
+		schedulepage.clickSchedulebtn();
+		schedulepage.deleteschedule();
+		schedulepage.backToHomepage();
 		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
@@ -79,6 +80,7 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 		readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);

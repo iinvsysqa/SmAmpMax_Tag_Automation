@@ -11,6 +11,7 @@ import pages.OTA_Status_monitor;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import pages.Szephyr_info_Page;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
@@ -26,6 +27,7 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 	Szephyr_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signUppage;	
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -47,14 +49,11 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new Szephyr_info_Page(driver);
+		storelog= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(3000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(2000);
-//		readwrite.write("factory_reset\r");
 		
 		adddevicepage.pair(2);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -68,7 +67,7 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 		Thread.sleep(1000);
 		}
 		homepage.disableBLE();
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		adddevicepage.staConnectivityCheck();
 		//homepage.enableBLE();
 		for(int i=0;i<5;i++) {
@@ -78,36 +77,14 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 		homepage.getCurrentvalue();
 		homepage.getVoltvalue();
 		homepage.getPowervalue();
-		
-		homepage.clickMenuBarButton();
-        devicemenupage.clickDeviceSettingsButton();
-		devicemenupage.clickResetDeviceButton();
-		devicemenupage.clickResetConfirmationYesButton();
-		adddevicepage.checkdeviceresettoast();
-		devicemenupage.AddDevicePagedisplayed();
-		
+		homepage.enableBLE();
 		
 		///CONNECTIVITY_MOD_2_TC_2--Kill and Open///
 		
-		adddevicepage.pair(2);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
-		adddevicepage.bleConnectivityCheck();
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
-		homepage.disableBLE();
-		
-		Thread.sleep(5000);
-		adddevicepage.staConnectivityCheck();
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
 		
 		homepage.killandopen();
 		adddevicepage.ClickOkButtonBLEpopUP();
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		adddevicepage.staConnectivityCheck();
 		homepage.clickONOFFButton();
 		
@@ -181,6 +158,7 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 		 readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);

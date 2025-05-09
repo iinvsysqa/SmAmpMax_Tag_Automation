@@ -12,6 +12,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -24,6 +25,7 @@ public class TC04_SignIn_Valid_User_Max extends MobileAppWrappers{
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage storelog;
 
 	@BeforeClass
 	public void startTestCase() {
@@ -37,14 +39,14 @@ public class TC04_SignIn_Valid_User_Max extends MobileAppWrappers{
 		landingpage = new LandingPage(driver);
 		otppage = new OtpPage(driver);
 		signuppage =new SignUpPage(driver);
+		storelog= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));		
 		try {
 		readwrite.openPort();
 		
-		signuppage.uninstall_reinstall();
 		landingpage.clickSignInButton();
-		loginpage.enterUserName("testuser@gmail.com");
+		loginpage.enterUserName(loadProp("USERNAME"));
 		loginpage.clickSignInButton();
 		Thread.sleep(3000);
 		otppage.verifyOTPVerificationTitle("OTP Verification");
@@ -58,6 +60,7 @@ public class TC04_SignIn_Valid_User_Max extends MobileAppWrappers{
 		readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			e.printStackTrace();
 			readwrite.closePort();
 			fail(e);

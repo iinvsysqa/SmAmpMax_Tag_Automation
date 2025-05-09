@@ -1,14 +1,13 @@
 package sampMax_testcase;
 
 import static org.testng.Assert.fail;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import pages.AddDevicePage;
-import pages.Analytics;
+import pages.AnalyticsPage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -17,7 +16,8 @@ public class TC07_Analytics_Max extends MobileAppWrappers{
 	HomePage homepage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	Analytics analyticspage;
+	AnalyticsPage analyticspage;
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -36,23 +36,23 @@ public class TC07_Analytics_Max extends MobileAppWrappers{
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		analyticspage= new Analytics(driver);
+		analyticspage= new AnalyticsPage(driver);
+		storelog= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-		Thread.sleep(3000);
-		readwrite.write("factory_reset\r");
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
-		
+		Thread.sleep(3000);
+		homepage.clickONOFFButton();
+		Thread.sleep(60000);
+		homepage.clickONOFFButton();
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
 		analyticspage.navigatehomepage();
@@ -62,12 +62,16 @@ public class TC07_Analytics_Max extends MobileAppWrappers{
 		homepage.clickONOFFButton();
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.checkenrgyduration(1);
-		
-		
+		analyticspage.navigatehomepage();
+		homepage.clickMenuBarButton();
+		devicemenupage.clickMenuBarRemoveDevice();
+		devicemenupage.clickRemoveDevicePopupYesButton();
+		devicemenupage.AddDevicePagedisplayed();
 		
 				
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			e.printStackTrace();
 			readwrite.closePort();
 			fail(e);

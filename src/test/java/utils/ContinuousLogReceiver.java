@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class ContinuousLogReceiver implements Runnable  {
     private volatile boolean running = true; // Control the running state
     private volatile boolean loggingEnabled = true; // Control the logging state
-    private final Path logFilePath = Path.of("serial_log.txt"); // File path for logging
+    private final Path logFilePath = Path.of("serial_log.log"); // File path for logging
 
     public void logrReceiver() {
         // List available ports

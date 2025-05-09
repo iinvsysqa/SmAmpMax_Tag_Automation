@@ -593,6 +593,13 @@ public class AddDevicePage extends GenericWrappers {
 		clickbyXpath(backbuttonDevicesettings, "back button click");
 	}
 
+	public void alertOkButton() {
+		try {
+			alertok.click();
+		} catch (Exception e) {
+			//
+		}
+	}
 	
 
 	LandingPage landingpage;
@@ -610,7 +617,7 @@ public class AddDevicePage extends GenericWrappers {
 		devicemenupage = new DeviceMenuPage(driver);
 		passcommand = new PassSTComment();
 		
-		verifysigninpage();
+		//verifysigninpage();
 		initiatepairing(mode);
 	}
 
@@ -688,12 +695,12 @@ public class AddDevicePage extends GenericWrappers {
 //				locationPopUpPermission();
 //				nearByPermission();
 
-				Thread.sleep(5000);
+				Thread.sleep(7000);
 //				blepermissionokpopup();
           
 				clickWifiCancelButton();
 				Thread.sleep(25000);
-				
+				blepermissionokpopup();
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton)) {
 				retrypagecheck(mode);
 				unregistereddevicepopup();
@@ -712,6 +719,7 @@ public class AddDevicePage extends GenericWrappers {
 				enterWiFiPassword(wifiPassword);
 				clickEnterButton();
 				Thread.sleep(30000);
+				alertOkButton();
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton))  {
 				retrypagecheck(mode);
 				unregistereddevicepopup();
@@ -720,15 +728,14 @@ public class AddDevicePage extends GenericWrappers {
 				
 			case 3:
 				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
-				readwrite.write("reboot\r");
 				turnOffBT();
 				startPairingButton();
 //				blepermissionokpopup();
 //				locationPopUpPermission();
 //				nearByPermission();
-
 				readwrite.write("factory_reset\r");
 				blepermissionokpopup();
+				
 				enterWiFiPassword(wifiPassword);
 				clickEnterButton();
 				
@@ -737,7 +744,7 @@ public class AddDevicePage extends GenericWrappers {
 				
 				Thread.sleep(30000);
 				blepermissionokpopup();
-				
+				alertOkButton();
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton)) {
 					retrypagecheck(mode);
 					unregistereddevicepopup();
@@ -752,27 +759,23 @@ public class AddDevicePage extends GenericWrappers {
 				readwrite.write("factory_reset\r");
 				
 				blepermissioncancelpopup();
-//				Thread.sleep(3000);
 //				locationPopUpPermission();
 //				nearByPermission();
-
-				Thread.sleep(1000 * 5 * 1);
-				blepermissionokpopup();
 
 				Thread.sleep(1000 * 10 * 3);
 
 				enterWiFiPassword(loadProp("WIFIPASSWORD"));
+				Thread.sleep(10000);
 				clickEnterButton();
 
 				Thread.sleep(5*20*1000);
-				
+				alertOkButton();
 				if(!isElementDisplayedCheck(devicewifipop_upOK)) {
 					retrypagecheck(mode);
 					unregistereddevicepopup();
 				}
 				
 				connectwithmobilewifipage();
-				System.out.println("hihi");
 				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 				
 				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
@@ -780,7 +783,7 @@ public class AddDevicePage extends GenericWrappers {
 					
 					clickbyXpath(devicewifipop_upOK, "Cliked on not connected with router pop-up");
 				}
-				
+				blepermissionokpopup();
 				break;
 
 			case 5:
@@ -804,9 +807,8 @@ public class AddDevicePage extends GenericWrappers {
 //				} else {
 //					System.out.println("Alert pop-up not displayed");
 //				}
-
+			    readwrite.write("factory_reset\r");
 				clickWifiCancelButton();
-//				readwrite.write("factory_reset\r");
 				Thread.sleep(5*20*1000);
 
 				if(!isElementDisplayedCheck(devicewifipop_upOK))  {
@@ -967,29 +969,29 @@ public class AddDevicePage extends GenericWrappers {
 
 	public void checkdevicedetailstoast() {
 
-		verifyTextContainsByXpath(sZhephyrInfotoast, deviceDetailsUpdated,
+		verifyToastContainsTextByXpath(sZhephyrInfotoast, deviceDetailsUpdated,
 				"Device details updated successfully! toast");
 	}
 
 	public void checkdevicesettingstoast() {
 
-		verifyTextContainsByXpath(Devicesettingstoast, devicesettingsupdatesuccess,
+		verifyToastContainsTextByXpath(Devicesettingstoast, devicesettingsupdatesuccess,
 				"Device settings updated successfully! toast");
 	}
 
 	public void checkdeviceremovedtoast() {
 
-		verifyTextContainsByXpath(deviceremovedtoast, DeviceRemovedSuccessfully, "  DeviceRemovedSuccessfully toast");
+		verifyToastContainsTextByXpath(deviceremovedtoast, DeviceRemovedSuccessfully, "  DeviceRemovedSuccessfully toast");
 	}
 
 	public void checkdeviceresettoast() {
 
-		verifyTextContainsByXpath(deviceresettoast, YourDeviceResetSuccessfully, "  YourDeviceResetSuccessfully toast");
+		verifyToastContainsTextByXpath(deviceresettoast, YourDeviceResetSuccessfully, "  YourDeviceResetSuccessfully toast");
 	}
 
 	public void checkrouteraddedsuccessfultoast() {
 
-		verifyTextContainsByXpath(routeraddedsuccessfullytoast, RouterAddedSuccessfully,
+		verifyToastContainsTextByXpath(routeraddedsuccessfullytoast, RouterAddedSuccessfully,
 				" RouterAddedSuccessfully toast");
 	}
 

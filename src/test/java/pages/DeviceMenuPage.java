@@ -163,7 +163,7 @@ public class DeviceMenuPage extends GenericWrappers{
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Add Router, Choosing to add a router will add a router to your device.\"]")
 	private WebElement addRouterButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Remove router\"]")
+	@FindBy(xpath = "//*[@resource-id='RemoveRouterContx']")
 	private WebElement removeRouterButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Cancel\"]")
@@ -178,10 +178,10 @@ public class DeviceMenuPage extends GenericWrappers{
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Cancel\"]")
 	private WebElement routerPopCancelButton;
 	//*[@resource-id='settingDevice_toggle_switch']
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"com.szephyr:id/DeviceSetting_LEDQuietMode\"]/android.view.ViewGroup")
+	@FindBy(xpath = "//*[@resource-id='settingDevice_toggle_switch']")
 	private WebElement quietLEDToggleEnable;
 	
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"com.szephyr:id/DeviceSetting_LEDQuietMode\"]/android.view.ViewGroup")
+	@FindBy(xpath = "//*[@resource-id='settingDevice_toggle_switch']")
 	private WebElement quietLEDToggleDisable;
 	
 	@FindBy(xpath = "//*[@resource-id='Device_BackIcon']")

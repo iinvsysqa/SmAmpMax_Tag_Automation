@@ -14,6 +14,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -26,6 +27,7 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -42,19 +44,18 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 		devicemenupage= new DeviceMenuPage(driver);
 		homepage=new HomePage(driver);
 		signuppage =new SignUpPage(driver);
-		
+		storelog= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
 		
-		signuppage.uninstall_reinstall();
 		landingpage.clickSignInButton();
 		driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.smampmax android.permission.ACCESS_FINE_LOCATION"));
 		driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_SCAN"));
 		driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_CONNECT"));
 		
-		loginpage.enterUserName("testuser@gmail.com");
+		loginpage.enterUserName(loadProp("USERNAME"));
 		loginpage.clickSignInButton();
 		otppage.verifyOTPVerificationTitle("OTP Verification");
 		otppage.enterOTPField1("1");
@@ -82,6 +83,7 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 		readwrite.closePort();
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			e.printStackTrace();
 			readwrite.closePort();
 			fail(e);

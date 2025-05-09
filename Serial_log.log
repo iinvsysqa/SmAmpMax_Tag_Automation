@@ -1,0 +1,102 @@
+W (01:18:36.060) EX: TF: 0 TZ: 0 Sys_tm:4716
+I (01:18:36.060) EX: get time GMT= 4716
+W (01:18:36.153) NVM: part erase scs
+W (01:18:36.153) NVM: part erase restart
+W (01:18:36.171) NVM: esp_part_write scs
+W (01:18:36.279) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 9 vl_or 0 vs 25
+W (01:18:36.279) NVM: part erase scs
+W (01:18:36.279) NVM: part erase restart
+W (01:18:36.300) NVM: esp_part_write scs
+W (01:18:36.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 10 vl_or 0 vs 25
+W (01:18:37.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 0 vl_or 0 vs 25
+W (01:18:37.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 1 vl_or 0 vs 25
+W (01:18:38.172) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 2 vl_or 0 vs 25
+W (01:18:38.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 3 vl_or 0 vs 25
+W (01:18:39.172) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 4 vl_or 0 vs 25
+W (01:18:39.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 5 vl_or 0 vs 25
+W (01:18:40.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 6 vl_or 0 vs 25
+W (01:18:40.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 7 vl_or 0 vs 25
+W (01:18:41.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 8 vl_or 0 vs 25
+W (01:18:41.300) EX: TF: 0 TZ: 0 Sys_tm:4721
+I (01:18:41.300) EX: get time GMT= 4721
+W (01:18:41.394) NVM: part erase scs
+W (01:18:41.394) NVM: part erase restart
+W (01:18:41.413) NVM: esp_part_write scs
+W (01:18:41.519) NVM: part erase scs
+W (01:18:41.519) NVM: part erase restart
+W (01:18:41.538) NVM: esp_part_write scs
+W (01:18:41.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 9 vl_or 0 vs 25
+W (01:18:42.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 10 vl_or 0 vs 25
+W (01:18:42.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 0 vl_or 0 vs 25
+W (01:18:43.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 1 vl_or 0 vs 25
+W (01:18:43.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 2 vl_or 0 vs 25
+W (01:18:44.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 3 vl_or 0 vs 25
+W (01:18:44.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 4 vl_or 0 vs 25
+W (01:18:45.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 5 vl_or 0 vs 25
+W (01:18:45.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 6 vl_or 0 vs 25
+W (01:18:46.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 7 vl_or 0 vs 25
+W (01:18:46.538) EX: TF: 0 TZ: 0 Sys_tm:4726
+I (01:18:46.538) EX: get time GMT= 4726
+W (01:18:46.635) NVM: part erase scs
+W (01:18:46.635) NVM: part erase restart
+W (01:18:46.655) NVM: esp_part_write scs
+W (01:18:46.759) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 8 vl_or 0 vs 25
+W (01:18:46.759) NVM: part erase scs
+W (01:18:46.759) NVM: part erase restart
+W (01:18:46.779) NVM: esp_part_write scs
+W (01:18:47.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 9 vl_or 0 vs 25
+W (01:18:47.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 10 vl_or 0 vs 25
+W (01:18:48.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 0 vl_or 0 vs 25
+W (01:18:48.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 1 vl_or 0 vs 25
+W (01:18:49.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 2 vl_or 0 vs 25
+W (01:18:49.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 3 vl_or 0 vs 25
+W (01:18:50.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 4 vl_or 0 vs 25
+W (01:18:50.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 5 vl_or 0 vs 25
+W (01:18:51.172) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 6 vl_or 0 vs 25
+W (01:18:51.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 7 vl_or 0 vs 25
+W (01:18:51.779) EX: TF: 0 TZ: 0 Sys_tm:4731
+I (01:18:51.779) EX: get time GMT= 4731
+W (01:18:51.872) NVM: part erase scs
+W (01:18:51.872) NVM: part erase restart
+W (01:18:51.890) NVM: esp_part_write scs
+W (01:18:51.992) NVM: part erase scs
+W (01:18:51.992) NVM: part erase restart
+W (01:18:52.010) NVM: esp_part_write scs
+W (01:18:52.172) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 8 vl_or 0 vs 25
+W (01:18:52.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 9 vl_or 0 vs 25
+W (01:18:53.172) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 10 vl_or 0 vs 25
+W (01:18:53.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 0 vl_or 0 vs 25
+W (01:18:54.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 1 vl_or 0 vs 25
+W (01:18:54.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 2 vl_or 0 vs 25
+W (01:18:55.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 3 vl_or 0 vs 25
+W (01:18:55.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 4 vl_or 0 vs 25
+W (01:18:56.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 5 vl_or 0 vs 25
+W (01:18:56.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 6 vl_or 0 vs 25
+W (01:18:57.010) EX: TF: 0 TZ: 0 Sys_tm:4737
+I (01:18:57.010) EX: get time GMT= 4737
+W (01:18:57.104) NVM: part erase scs
+W (01:18:57.104) NVM: part erase restart
+W (01:18:57.123) NVM: esp_part_write scs
+W (01:18:57.228) NVM: part erase scs
+W (01:18:57.228) NVM: part erase restart
+W (01:18:57.246) NVM: esp_part_write scs
+W (01:18:57.247) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 7 vl_or 0 vs 25
+W (01:18:57.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 8 vl_or 0 vs 25
+W (01:18:58.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 9 vl_or 0 vs 25
+W (01:18:58.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 10 vl_or 0 vs 25
+W (01:18:59.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 0 vl_or 0 vs 25
+W (01:18:59.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 1 vl_or 0 vs 25
+W (01:19:00.172) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 2 vl_or 0 vs 25
+W (01:19:00.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 3 vl_or 0 vs 25
+W (01:19:01.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 4 vl_or 0 vs 25
+W (01:19:01.672) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 5 vl_or 0 vs 25
+W (01:19:02.172) EDRV: hvc 0 nvc 0 lvc 0 V 204912 C 0 P 0 pc 6 vl_or 0 vs 25
+W (01:19:02.246) EX: TF: 0 TZ: 0 Sys_tm:4742
+I (01:19:02.246) EX: get time GMT= 4742
+W (01:19:02.343) NVM: part erase scs
+W (01:19:02.343) NVM: part erase restart
+W (01:19:02.363) NVM: esp_part_write scs
+W (01:19:02.461) NVM: part erase scs
+W (01:19:02.461) NVM: part erase restart
+W (01:19:02.479) NVM: esp_part_write scs
+W (01:19:02.672) EDRV: hvc 0 nvc 0 lvc 0 V 204604 C 0 P 0 pc 7 vl_or 0 vs 25

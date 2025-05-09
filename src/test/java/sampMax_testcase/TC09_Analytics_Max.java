@@ -6,9 +6,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pages.AddDevicePage;
-import pages.Analytics;
+import pages.AnalyticsPage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -17,7 +18,8 @@ public class TC09_Analytics_Max extends MobileAppWrappers{
 	HomePage homepage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	Analytics analyticspage;
+	AnalyticsPage analyticspage;
+	StoreLogPage storelog;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -35,7 +37,8 @@ public class TC09_Analytics_Max extends MobileAppWrappers{
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		analyticspage= new Analytics(driver);
+		analyticspage= new AnalyticsPage(driver);
+		storelog= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -50,6 +53,13 @@ public class TC09_Analytics_Max extends MobileAppWrappers{
 	
 		homepage.WifiSwitch(loadProp("REMOTEWIFINAME"),loadProp("REMOTEWIFIPASSWORD"));
 		
+
+		Thread.sleep(3000);
+		
+		homepage.clickONOFFButton();
+		Thread.sleep(60000);
+		homepage.clickONOFFButton();
+		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
 		analyticspage.navigatehomepage();
@@ -60,11 +70,16 @@ public class TC09_Analytics_Max extends MobileAppWrappers{
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.checkenrgyduration(1);
 		
-			
-		
+		//Remove Device	
+		analyticspage.navigatehomepage();
+		homepage.clickMenuBarButton();
+		devicemenupage.clickMenuBarRemoveDevice();
+		devicemenupage.clickRemoveDevicePopupYesButton();
+		devicemenupage.AddDevicePagedisplayed();
 		
 		}
 		catch (Exception e) {
+			storelog.CollectLogOnFailure(testCaseName, testDescription);
 			e.printStackTrace();
 			readwrite.closePort();
 			fail(e);
