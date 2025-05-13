@@ -54,6 +54,10 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
+		homepage.clickONOFFButton();
+		Thread.sleep(60000);
+		homepage.clickONOFFButton();
+		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
 		schedulepage.backToHomepage();

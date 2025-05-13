@@ -53,6 +53,10 @@ public class TC28_Schedular_Max extends MobileAppWrappers{
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.clickSubmitButtonDeviceSetting();
+		Thread.sleep(5000);
+		homepage.clickONOFFButton();
+		Thread.sleep(60000);
+		homepage.clickONOFFButton();
 		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
@@ -60,7 +64,6 @@ public class TC28_Schedular_Max extends MobileAppWrappers{
 		schedulepage.clickSchedulebtn();
 		schedulepage.createSchedules(3, 1, 1);// mention the time to start ,how many schedules need to keep,interval
 												// between next schedule
-
 		schedulepage.backToHomepage();
 
 		Thread.sleep(5 * 60 * 1000);// set thread values based on schedule duration kept .
