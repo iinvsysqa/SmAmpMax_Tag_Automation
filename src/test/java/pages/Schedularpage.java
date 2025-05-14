@@ -443,6 +443,7 @@ public class Schedularpage extends GenericWrappers {
 			while (createdSchedule.isDisplayed()) {
 
 				clickbyXpath(createdSchedule, "created schedules");
+				scroll2();
 				clickbyXpath(deleteBtn, "deleteButton");
 				checktoast();
 
