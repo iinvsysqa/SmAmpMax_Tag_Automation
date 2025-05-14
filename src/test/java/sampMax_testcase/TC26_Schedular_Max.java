@@ -68,7 +68,7 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 		schedulepage.backToHomepage();
 //		schedulepage.disableschedule(0);
 
-		Thread.sleep(5 * 60 * 1000);// set thread values based on schedule duration kept .
+		Thread.sleep(2 * 60 * 1000);// set thread values based on schedule duration kept .
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.checkenrgyduration(1);
 		schedulepage.backToHomepage();
