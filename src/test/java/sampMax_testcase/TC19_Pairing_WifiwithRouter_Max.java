@@ -30,8 +30,8 @@ public class TC19_Pairing_WifiwithRouter_Max extends MobileAppWrappers{
 	}
 
 
-	@Test(priority = 18)
-	public void removerepair() throws Exception {
+//	@Test(priority = 18)
+	public void pairingWifiwithRouter() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

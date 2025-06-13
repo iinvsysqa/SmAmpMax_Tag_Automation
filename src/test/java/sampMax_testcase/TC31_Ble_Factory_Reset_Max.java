@@ -34,7 +34,7 @@ public class TC31_Ble_Factory_Reset_Max extends MobileAppWrappers{
 
 
 @Test(priority = 30)
-public void removerepair() throws Exception {
+public void Ble_without_Factory_Reset() throws Exception {
 	initAndriodDriver();
 	pairBlewithoutRouter();
 }
@@ -74,7 +74,8 @@ public void pairBlewithoutRouter() throws Exception {
 	devicemenupage.clickResetConfirmationYesButton();
 	adddevicepage.checkdeviceresettoast();
 	devicemenupage.AddDevicePagedisplayed();
-	 readwrite.closePort();
+	homepage.enableWIFI();
+	readwrite.closePort();
 	}
 	catch (Exception e) {
 		storelog.CollectLogOnFailure(testCaseName, testDescription);

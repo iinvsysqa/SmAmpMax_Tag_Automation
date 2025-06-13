@@ -1,11 +1,16 @@
 package pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.appmanagement.ApplicationState;
+import io.netty.handler.timeout.TimeoutException;
 import wrappers.GenericWrappers;
 
 public class HomePage extends GenericWrappers{
@@ -45,6 +50,9 @@ public class HomePage extends GenericWrappers{
 	
 	@FindBy(xpath = "//*[@resource-id='PairedGeyser_Img_svg_ble_0_blue']")
 	private WebElement bleSymbol;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Searching for SmAmp Max to establish connection\"]")
+	private WebElement connectivityText;
 	
 	
 	public HomePage(AndroidDriver driver) {
@@ -132,6 +140,22 @@ public class HomePage extends GenericWrappers{
 		   System.out.println(attribute);
 	   }
 	   
+	   public void checkConnectivity() {
+		    try {
+		    	// WebDriverWait wait = new WebDriverWait(driver, 10);
+		    //	 WebElement element =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Searching for SmAmp Max to establish connection']")));
+		    	
+		        if (isElementDisplayedCheck(connectivityText)) {
+		            utils.Reporter.reportStep("Connectivity is not Established", "FAIL");
+		        } else {
+		            // This part is less likely to be hit with invisibilityOfElementLocated
+		            utils.Reporter.reportStep("Connectivity is not Established ", "PASS");
+		        }
+		    } catch (TimeoutException e) {
+		        // This exception means the element was still visible after the wait time
+		        utils.Reporter.reportStep("Connectivity is Established (Text remained visible)", "PASS");
+		    }
+		}
 //	   String description[]={"Searching for sZephyr to establish connection","Please ensure sZephyr is switched ON prior to operating your AC remote","Your AC unit is either in standby or powered OFF at the moment","sZephyr and AC turned ON"};
 	   
 //	   public void checkforDeviceOffstateDescription() {

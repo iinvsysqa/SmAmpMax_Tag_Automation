@@ -29,7 +29,7 @@ public class TC10_Analytics_Max extends MobileAppWrappers{
 	}
 
 	@Test(priority = 9)
-	public void removerepair() throws Exception {
+	public void analyticsofflineSession() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -54,11 +54,12 @@ public class TC10_Analytics_Max extends MobileAppWrappers{
 			homepage.WifiSwitch(loadProp("REMOTEWIFINAME"), loadProp("REMOTEWIFIPASSWORD"));
 			
 
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 			
-			homepage.clickONOFFButton();
-			Thread.sleep(60000);
-			homepage.clickONOFFButton();
+			homepage.checkConnectivity();
+			//homepage.clickONOFFButton();
+			//Thread.sleep(60000);
+			//homepage.clickONOFFButton();
 
 			analyticspage.navigateAnalyticsPage();
 			analyticspage.getenergydurationvalue();
@@ -67,6 +68,7 @@ public class TC10_Analytics_Max extends MobileAppWrappers{
 			Thread.sleep(1 * 60 * 1000);
 			readwrite.write("button_press\r");
 			openapp();
+			Thread.sleep(10000);
 			adddevicepage.blepermissionokpopup();
 			analyticspage.navigateAnalyticsPage();
 			analyticspage.checkenrgyduration(1);

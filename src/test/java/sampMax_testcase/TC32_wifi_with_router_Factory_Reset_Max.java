@@ -33,8 +33,8 @@ public class TC32_wifi_with_router_Factory_Reset_Max extends MobileAppWrappers{
 
 
 
-	@Test(priority = 31)
-	public void removerepair() throws Exception {
+//	@Test(priority = 31)
+	public void FactoryReset_WifiWithRouter() throws Exception {
 			initAndriodDriver();
 			pairBlewithoutRouter();
 	}

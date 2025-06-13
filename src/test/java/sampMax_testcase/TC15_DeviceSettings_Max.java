@@ -24,7 +24,7 @@ public class TC15_DeviceSettings_Max extends MobileAppWrappers {
 	}
 
 	@Test(priority = 14)
-	public void removerepair() throws Exception {
+	public void deviceSettings() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -60,6 +60,7 @@ public class TC15_DeviceSettings_Max extends MobileAppWrappers {
 			homepage.clickMenuBarButton();
 			devicemenupage.clickDeviceSettingsButton();
 			devicemenupage.clickDurationForONButton();
+			Thread.sleep(3000);
 			devicemenupage.clickDeviceSettingsBackButton();
 			devicemenupage.clickDeviceSettingsBackButton();
 			homepage.clickMenuBarButton();

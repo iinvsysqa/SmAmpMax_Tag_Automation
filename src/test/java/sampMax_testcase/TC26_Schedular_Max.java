@@ -34,7 +34,7 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 	}
 	
 	@Test(priority = 25)
-	public void schedule() throws Exception {
+	public void Schedular_Smartconfig() throws Exception {
 		initAndriodDriver();
 
 		homepage=new HomePage(driver);
@@ -68,7 +68,7 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 		schedulepage.backToHomepage();
 //		schedulepage.disableschedule(0);
 
-		Thread.sleep(2 * 60 * 1000);// set thread values based on schedule duration kept .
+		Thread.sleep(5 * 60 * 1000);// set thread values based on schedule duration kept .
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.checkenrgyduration(1);
 		schedulepage.backToHomepage();

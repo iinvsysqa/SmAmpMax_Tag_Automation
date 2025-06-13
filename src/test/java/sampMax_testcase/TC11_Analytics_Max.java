@@ -25,7 +25,7 @@ public class TC11_Analytics_Max extends MobileAppWrappers {
 	
 }
 	@Test(priority = 10)
-	public void removerepair() throws Exception {
+	public void analyticsSmartConfig() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -41,7 +41,7 @@ public class TC11_Analytics_Max extends MobileAppWrappers {
 		try {
 		readwrite.openPort();
 		
-		adddevicepage.pair(4);
+		adddevicepage.pair(2);
 		adddevicepage.blepermissionokpopup();
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
@@ -51,9 +51,9 @@ public class TC11_Analytics_Max extends MobileAppWrappers {
 
 		Thread.sleep(3000);
 		
-		homepage.clickONOFFButton();
-		Thread.sleep(60000);
-		homepage.clickONOFFButton();
+		//homepage.clickONOFFButton();
+		//Thread.sleep(60000);
+		//homepage.clickONOFFButton();
 		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
@@ -65,6 +65,7 @@ public class TC11_Analytics_Max extends MobileAppWrappers {
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.checkenrgyduration(1);
 		
+		analyticspage.navigatehomepage();
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
 		devicemenupage.clickRemoveDevicePopupYesButton();

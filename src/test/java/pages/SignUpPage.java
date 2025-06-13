@@ -151,7 +151,7 @@ public class SignUpPage extends GenericWrappers {
 	}
 	
 	public void checkUserNameExistToast(String content) {
-		verifyTextContainsByXpath(userNameExistToast, content, " The Toast ");
+		verifyToastContainsTextByXpath(userNameExistToast, content, " The Toast ");
 		
 	}
 	

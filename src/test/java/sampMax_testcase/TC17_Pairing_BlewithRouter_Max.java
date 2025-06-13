@@ -31,7 +31,7 @@ public class TC17_Pairing_BlewithRouter_Max extends MobileAppWrappers{
 	
 
 	@Test(priority = 16)
-	public void removerepair() throws Exception {
+	public void pairingWithRouter() throws Exception {
 		initAndriodDriver();
 
 

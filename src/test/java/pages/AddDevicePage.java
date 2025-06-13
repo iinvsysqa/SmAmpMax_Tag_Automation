@@ -26,6 +26,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.appmanagement.ApplicationState;
 import utils.PassSTComment;
+import utils.RunRelayFromPython;
 import utils.logReadandWrite;
 import wrappers.GenericWrappers;
 
@@ -383,7 +384,7 @@ public class AddDevicePage extends GenericWrappers {
 	}
 
 	public void clickNextButtonsZephyrInfo() {
-		if (isElementDisplayednext(sZephyrInfoNextButton, "sZephyr info Next button ")) {
+		if (isElementDisplayednext(sZephyrInfoNextButton, " Next button ")) {
 			clickbyXpath(sZephyrInfoNextButton, " Next Button ");
 		} else {
 			driver.activateApp(loadProp("APP_PACKAGE"));
@@ -617,7 +618,7 @@ public class AddDevicePage extends GenericWrappers {
 		devicemenupage = new DeviceMenuPage(driver);
 		passcommand = new PassSTComment();
 		
-		//verifysigninpage();
+		verifysigninpage();
 		initiatepairing(mode);
 	}
 
@@ -694,13 +695,17 @@ public class AddDevicePage extends GenericWrappers {
 //				blepermissionokpopup();
 //				locationPopUpPermission();
 //				nearByPermission();
-
-				Thread.sleep(7000);
+				Thread.sleep(3000);
+				RunRelayFromPython.powerOndeviceViaRelay("off");
+				Thread.sleep(2000);
+				RunRelayFromPython.powerOndeviceViaRelay("on");
+				Thread.sleep(5000);
 //				blepermissionokpopup();
           
 				clickWifiCancelButton();
+				
 				Thread.sleep(25000);
-				blepermissionokpopup();
+//				blepermissionokpopup();
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton)) {
 				retrypagecheck(mode);
 				unregistereddevicepopup();
@@ -715,7 +720,11 @@ public class AddDevicePage extends GenericWrappers {
 //				locationPopUpPermission();
 //				nearByPermission();
 				readwrite.write("factory_reset\r");
-				blepermissionokpopup();
+				Thread.sleep(3000);
+				RunRelayFromPython.powerOndeviceViaRelay("off");
+				Thread.sleep(2000);
+				RunRelayFromPython.powerOndeviceViaRelay("on");
+				
 				enterWiFiPassword(wifiPassword);
 				clickEnterButton();
 				Thread.sleep(30000);
@@ -734,6 +743,11 @@ public class AddDevicePage extends GenericWrappers {
 //				locationPopUpPermission();
 //				nearByPermission();
 				readwrite.write("factory_reset\r");
+				Thread.sleep(3000);
+				RunRelayFromPython.powerOndeviceViaRelay("off");
+				Thread.sleep(2000);
+				RunRelayFromPython.powerOndeviceViaRelay("on");
+				
 				blepermissionokpopup();
 				
 				enterWiFiPassword(wifiPassword);
@@ -743,6 +757,7 @@ public class AddDevicePage extends GenericWrappers {
 				Thread.sleep(1000 * 1 * 10);
 				
 				Thread.sleep(30000);
+
 				blepermissionokpopup();
 				alertOkButton();
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton)) {
@@ -757,6 +772,10 @@ public class AddDevicePage extends GenericWrappers {
 				turnOffBT();
 				startPairingButton();
 				readwrite.write("factory_reset\r");
+				Thread.sleep(3000);
+				RunRelayFromPython.powerOndeviceViaRelay("off");
+				Thread.sleep(2000);
+				RunRelayFromPython.powerOndeviceViaRelay("on");
 				
 				blepermissioncancelpopup();
 //				locationPopUpPermission();
@@ -808,6 +827,11 @@ public class AddDevicePage extends GenericWrappers {
 //					System.out.println("Alert pop-up not displayed");
 //				}
 			    readwrite.write("factory_reset\r");
+			    Thread.sleep(3000);
+			    RunRelayFromPython.powerOndeviceViaRelay("off");
+				Thread.sleep(2000);
+				RunRelayFromPython.powerOndeviceViaRelay("on");
+				
 				clickWifiCancelButton();
 				Thread.sleep(5*20*1000);
 

@@ -48,7 +48,7 @@ public class SignInPage extends GenericWrappers {
 
 
 	public SignInPage checkUserNameNotFoundToast(String content) {
-		verifyTextContainsByXpath(userNotFoundToast, content, " The Toast ");
+		verifyToastContainsTextByXpath(userNotFoundToast, content, " The Toast ");
 		return this;
 		
 	}

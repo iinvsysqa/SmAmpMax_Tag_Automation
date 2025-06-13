@@ -189,6 +189,19 @@
 			<artifactId>svnkit</artifactId>
 			<version>1.10.11</version>
 		</dependency>
+		
+		<dependency>
+		<groupId>org.tmatesoft.svnkit</groupId>
+		<artifactId>svnkit</artifactId>
+		<version>1.10.11</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/com.hierynomus/sshj -->
+	<dependency>
+		<groupId>com.hierynomus</groupId>
+		<artifactId>sshj</artifactId>
+		<version>0.35.0</version>
+	</dependency>
 
 
 	</dependencies>

@@ -37,7 +37,7 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 	
 	
 	@Test(priority = 21)
-	public void removerepair() throws Exception {
+	public void connectivityBlewithRouter() throws Exception {
 		initAndriodDriver();
 		pairBlewithRouter();
 	}

@@ -36,7 +36,7 @@ public class TC33_sampMax_Info_Max extends MobileAppWrappers {
 
 
 	@Test(priority = 32)
-	public void removerepair() throws Exception {
+	public void SampMax_Info_check() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

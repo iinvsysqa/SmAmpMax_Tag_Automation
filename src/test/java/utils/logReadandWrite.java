@@ -17,7 +17,7 @@ public class logReadandWrite {
     private static logReadandWrite instance = null;
     private SerialPort serialPort;
     private final AtomicBoolean running = new AtomicBoolean(false);
-    private final Path logFilePath = Path.of("device.log");
+    private final Path logFilePath = Path.of("DeviceLog.log");
 
     private final Queue<String> logQueue = new ConcurrentLinkedQueue<>();
     private final Queue<String> writeQueue = new ConcurrentLinkedQueue<>();

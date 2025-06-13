@@ -43,16 +43,15 @@ public class AnalyticsPage  extends GenericWrappers {
 	}
 	
 	
-	int oldvalue;
-	public int getenergydurationvalue() {
-           expWait(enrgyDurationmin);
-           String oldTime = enrgyDurationmin.getText();
-		 Reporter.reportStep("Before update: " + oldTime, "INFO");
-		  oldvalue = parseTimeToMinutes(oldTime);
-		 
+	String oldvalue;
+	public String getenergydurationvalue() {
+
+        expWait(enrgyDurationmin);
+		 oldvalue = enrgyDurationmin.getText();
 		 Reporter.reportStep("Analytics value before Start of the session : " + oldvalue, "PASS");
 		System.out.println(oldvalue);
 	return oldvalue;
+	
 	}
 	
 
@@ -63,17 +62,14 @@ public class AnalyticsPage  extends GenericWrappers {
 	}
 	public boolean checkenrgyduration(int value) throws Exception {	
 		boolean bReturn = false;
-		expWait(enrgyDurationmin);
+		expshortWaittwenty(enrgyDurationmin);
 //		clickbyXpath(enrgyDurationmin, "energy duration");
-		int newvalue=oldvalue+value;
-//		String expectedTime = formatSecondsToTime(newvalue);
+		
+		int newvalue=extractMinutes(oldvalue)+value;
+		System.out.println("new value :"+newvalue);
 		String text = enrgyDurationmin.getText();
-		int newVal=parseTimeToMinutes(text);
-		
-		System.out.println("seconds added  "+newvalue);
-		System.out.println("new value    >>>>><<<<"+newVal);
-		
-		if ( newVal==newvalue){
+		System.out.println("after analytics :"+text);
+		if (extractMinutes( enrgyDurationmin.getText())==newvalue) {
 			
 			Reporter.reportStep("Analytics value updated after session : " + text, "PASS");
 			bReturn = true;
@@ -85,6 +81,7 @@ public class AnalyticsPage  extends GenericWrappers {
 		return bReturn;
 		
 	}
+	
 	
 	private int parseTimeToSeconds(String timeStr) {
 	    String[] parts = timeStr.split("m\\s*|s"); // Split by "m" and "s" (regex)

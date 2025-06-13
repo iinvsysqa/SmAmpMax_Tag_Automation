@@ -26,7 +26,7 @@ public class TC07_Analytics_Max extends MobileAppWrappers{
 
 }
 	@Test(priority = 6)
-	public void removerepair() throws Exception {
+	public void Analyticscheck() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

@@ -52,7 +52,7 @@ public class GenericWrappers {
 	static ExtentReports report;
 	public String sUrl, primaryWindowHandle, sHubUrl, sHubPort;
 	
-	public String loadProp(String property) {
+	public static String loadProp(String property) {
 		Properties prop = new Properties();
 		try {
 			prop.load(new FileInputStream(new File("./config.properties")));
@@ -315,10 +315,10 @@ public class GenericWrappers {
 			String sText = xpath.getText();
 			System.out.println(sText);
 			if (sText.trim().contains(text)) {
-				Reporter.reportStep(field + "contains " + text, "PASS");
+				Reporter.reportStep(field + "contains " + sText, "PASS");
 				bReturn = true;
 			} else {
-				Reporter.reportStep(field + " did not contain :" + text, "FAIL");
+				Reporter.reportStep(field + " did not contain :" + sText, "FAIL");
 			}
 		} catch (Exception e) {
 			Reporter.reportStep(field + " not displayed", "FAIL&RUN");
@@ -939,6 +939,62 @@ public class GenericWrappers {
         }
 	}
 	
+	public void getLatestBin(String baseRemotePath,String localDirectory,String newFileName) throws IOException {
+		// Add current week to the path
+        String weekFolder = getCurrentWeekFolder();
+        String remotePathWithWeek = baseRemotePath+weekFolder+"/";
+        System.out.println("Looking in directory: " + remotePathWithWeek);
+
+        // Get the latest folder within the week directory
+        String latestFolder = getLatestFolder(ftpClient, remotePathWithWeek);
+        if (latestFolder != null) {
+            String targetDirectory = remotePathWithWeek + latestFolder + "/";
+            System.out.println("Latest folder found: " + targetDirectory);
+
+            File localFolder = new File(localDirectory);
+            deleteAllFilesInFolder(localFolder);
+            
+            // Search for the file containing "szhephyr" in the latest folder
+            FTPFile[] files = ftpClient.listFiles(targetDirectory);
+            for (FTPFile file : files) {
+            	System.out.println(file);//////////////////////
+                if (file.isFile() && file.getName().matches("rel_device_bin_\\d+_prt_enbl\\.zip")) {
+                    String downloadedFileName = file.getName();
+                    File localFile = new File(localDirectory + File.separator + downloadedFileName);
+
+                    // Download the file
+                    try (FileOutputStream outputStream = new FileOutputStream(localFile)) {
+                        boolean success = ftpClient.retrieveFile(targetDirectory + downloadedFileName, outputStream);
+                        if (success) {
+                            System.out.println("Downloaded: " + downloadedFileName);
+                        } else {
+                            System.out.println("Failed to download: " + downloadedFileName);
+                        }
+                    }
+
+                    // Rename the downloaded file
+                    File renamedFile = new File(localDirectory + File.separator + newFileName);
+                    boolean renamed = localFile.renameTo(renamedFile);
+                    if (renamed) {
+                        System.out.println("File renamed to: " + newFileName);
+                    } else {
+                        System.out.println("Failed to rename file.");
+                    }
+
+                    break;
+                } else {
+                	 System.out.println("APK file not found at: " + localDirectory);
+                     // Fail the entire suite if APK is missing
+                   //  Assert.fail("APK file is required to run the test suite but was not found.");
+                }
+            }
+        } else {
+        	 System.out.println("APK file not found at: " + localDirectory);
+             // Fail the entire suite if APK is missing
+             Assert.fail("APK file is required to run the test suite but was not found.");
+            System.out.println("No latest folder found for the week.");
+        }
+	}
 	
 	// Get the latest folder from a given directory on the FTP server
     private static String getLatestFolder(FTPClient ftpClient, String directoryPath) throws IOException {
@@ -996,5 +1052,20 @@ public class GenericWrappers {
             return false;
         }
     }
-
+    
+ 
+    
+    public static int extractMinutes(String timeText) {
+	    // Regular expression to find digits followed by 'm'
+	    java.util.regex.Matcher matcher = java.util.regex.Pattern.compile("(\\d+)m").matcher(timeText);
+	    
+	    if (matcher.find()) {
+	        // group(1) is the captured number before 'm'
+	        return Integer.parseInt(matcher.group(1));
+	    } else {
+	        // If 'm' not found, you can decide what to return (0 or -1)
+	        return 0;
+	    }
+	}
+    
 }

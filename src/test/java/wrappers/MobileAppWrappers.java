@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.lang.runtime.SwitchBootstraps;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -16,7 +18,10 @@ import utils.CheckoutAndBuildApk;
 import utils.DataInputProvider;
 import utils.GetAppLog;
 import utils.Reporter;
+import utils.RunFlashScript;
 import utils.RunRelayFromPython;
+import utils.SwitchWiFi;
+import utils.UnzipBin;
 
 public class MobileAppWrappers extends GenericWrappers {
 	protected String browserName;
@@ -27,7 +32,8 @@ public class MobileAppWrappers extends GenericWrappers {
     private PrintStream fileOut;
     String baseRemotePath = loadProp("BASEREMOTEPATH");  // Base FTP directory path
     String localDirectory =loadProp("LOCALAPPPATH") ;  // Local directory to save file
-    String newFileName = loadProp("NEWFILENAME");  // New file name
+    String newFileName = loadProp("NEWFILENAME");
+    String newFileNameBin = loadProp("NEWFILENAME_BIN");// New file name
     
     
     String server = "192.168.10.34";//192.168.10.34
@@ -38,10 +44,21 @@ public class MobileAppWrappers extends GenericWrappers {
 	@BeforeSuite
 	public void beforeSuite() throws FileNotFoundException, IOException, InterruptedException{
 		RunRelayFromPython.powerOndeviceViaRelay("on");
+		// Switch Tp Link Wifi for Flashing
+		
+	//	SwitchWiFi.switchwifi(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+		// Flash 1 for Smazer, 2 - Smamax, 3 - sZphyer
+	//	RunFlashScript.runFlashScript("2");
+		
+		// Switch to IINVSYS Wifi After Flashing
+	//	SwitchWiFi.switchwifi(loadProp("REMOTEWIFINAME"), loadProp("REMOTEWIFIPASSWORD"));
 		
 		// Enable below two lines of code to Get app from FTP
-//		FTPUploader(server, port, user, pass);
+		FTPUploader(server, port, user, pass);
 //		getLatestApk(baseRemotePath, localDirectory, newFileName);
+//		getLatestBin(baseRemotePath, localDirectory, newFileNameBin);
+//		UnzipBin.unzip();
+		
 //		
 //		disconnect();
 		
@@ -95,42 +112,7 @@ public class MobileAppWrappers extends GenericWrappers {
 	@AfterMethod
 	public void afterMethod(){
 //		quitBrowser();
-		try {
-			// FTP server credentials
-
-			
-
-			// Local log files
-			String appLogPath = "./app_log.txt";
-			String deviceLogPath = "./serial_log.txt";
-
-			// FTP paths
-			String existingDirectory = "/Internal_Project/FULL_VALIDATION_PACKAGES_LOGS/LOGS/2024/Automation_Logs/";
-			String newSubDir = "logs_" + randomnumbers(6); // Subdirectory name
-			// Initialize FTP connection
-			FTPUploader(server, port, user, pass);
-
-			// Create new subdirectory inside the existing directory
-			createAndNavigateToSubdirectory(existingDirectory, newSubDir);
-
-			// Upload files to the new subdirectory
-			uploadFile(appLogPath,  testCaseName+"App.txt");
-			uploadFile(deviceLogPath, testCaseName+".txt");
-			
-
-			String remotefilepath =existingDirectory+newSubDir;
-			String Filename="/"+ testCaseName+".txt";
-			Reporter.reportStep(" FTP Path : "+ remotefilepath +
-					"<br>"
-					+"Device Log File name:"+Filename, "INFO");
-			
-			// Disconnect from FTP server
-			disconnect();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-
-		}
+	
 		driver.terminateApp(packages);
 		driver.quit();
 		

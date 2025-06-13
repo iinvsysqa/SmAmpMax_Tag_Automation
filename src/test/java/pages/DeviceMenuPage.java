@@ -166,7 +166,7 @@ public class DeviceMenuPage extends GenericWrappers{
 	@FindBy(xpath = "//*[@resource-id='RemoveRouterContx']")
 	private WebElement removeRouterButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Cancel\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"CANCEL\"]")
 	private WebElement removeRouterCancelButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Remove\"]")
@@ -212,7 +212,7 @@ public class DeviceMenuPage extends GenericWrappers{
 	private WebElement removeDevice;
 	
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Cancel\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"CANCEL\"]")
 	private WebElement removeDevicePopupNoButton;
 	
 	//android.widget.TextView[@text=\"YES\"]
@@ -408,8 +408,8 @@ public class DeviceMenuPage extends GenericWrappers{
         }
 
 		public void clickDeviceSettingsBackButton() throws InterruptedException {
-			wait.until(ExpectedConditions.elementToBeClickable(deviceSettingsPageBackButton)).click();
-//			clickbyXpath(deviceSettingsPageBackButton, " Click The Device Settings Page Back Button ");
+//			wait.until(ExpectedConditions.elementToBeClickable(deviceSettingsPageBackButton)).click();
+			clickbyXpath(deviceSettingsPageBackButton, " Click The Device Settings Page Back Button ");
         }
 		
 		
@@ -483,7 +483,7 @@ public class DeviceMenuPage extends GenericWrappers{
 			
 		}
 		
-		public void removerouter() {
+		public void removerouter() throws InterruptedException {
 
 			driver.findElement(MobileBy.AndroidUIAutomator(
 				    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Router Details\"));"));
@@ -498,7 +498,7 @@ public class DeviceMenuPage extends GenericWrappers{
 				clickRemoveRouterCancelButton();
 				clickbyXpath(removeRouterButton, "Remove router button ");
 				clickRemoveRouterRemoveButton();
-				
+				Thread.sleep(3000);
 				clickDevicesettingsbackButton();
 
 			}

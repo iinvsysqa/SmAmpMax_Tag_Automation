@@ -35,7 +35,7 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 		testDescription = "After Login, Pair with device and logout from device is working";
 }
 	@Test(priority = 5)
-	public void login() throws Exception {
+	public void signInandSignOutFlow() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);
@@ -79,7 +79,17 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 		homepage.clickMenuBarButton();
 		devicemenupage.clickLogoutButtonAfterReset();
 		devicemenupage.clickLogoutConfirmationButton();
-		landingpage.clickSignUpLink();
+		
+		landingpage.clickSignInButton();		
+		loginpage.enterUserName(loadProp("USERNAME"));
+		loginpage.clickSignInButton();
+		otppage.verifyOTPVerificationTitle("OTP Verification");
+		otppage.enterOTPField1("1");
+		otppage.enterOTPField2("2");
+		otppage.enterOTPField3("3");
+		otppage.enterOTPField4("4");
+		otppage.submitButton();
+		
 		readwrite.closePort();
 		}
 		catch (Exception e) {

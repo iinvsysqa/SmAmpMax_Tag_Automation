@@ -28,7 +28,7 @@ public class TC09_Analytics_Max extends MobileAppWrappers{
 
 }
 	@Test(priority = 8)
-	public void removerepair() throws Exception {
+	public void analyticsRemoteCheck() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -54,11 +54,11 @@ public class TC09_Analytics_Max extends MobileAppWrappers{
 		homepage.WifiSwitch(loadProp("REMOTEWIFINAME"),loadProp("REMOTEWIFIPASSWORD"));
 		
 
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		
-		homepage.clickONOFFButton();
-		Thread.sleep(60000);
-		homepage.clickONOFFButton();
+		//homepage.clickONOFFButton();
+		//Thread.sleep(60000);
+		//homepage.clickONOFFButton();
 		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();

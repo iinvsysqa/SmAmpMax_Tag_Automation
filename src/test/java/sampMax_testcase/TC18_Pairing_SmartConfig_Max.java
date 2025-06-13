@@ -32,7 +32,7 @@ public class TC18_Pairing_SmartConfig_Max extends MobileAppWrappers{
 //	Properties prop= new Properties();
 	
 	@Test(priority = 17)
-	public void removerepair() throws Exception {
+	public void pairingSmartConfig() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

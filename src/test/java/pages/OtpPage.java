@@ -77,12 +77,12 @@ public class OtpPage extends GenericWrappers {
 	}
 	
 	public void checkIncorrectOTPToast(String content) {
-		verifyTextContainsByXpath(incorrectOTPToast, content, " The Toast ");
+		verifyToastContainsTextByXpath(incorrectOTPToast, content, " The Toast ");
 		
 	}
 	
 	public void checkTooManyAttemptsOtp(String content) {
-		verifyTextContainsByXpath(tooManyAttemptsToast, content, " The Toast ");
+		verifyToastContainsTextByXpath(tooManyAttemptsToast, content, " The Toast ");
 		
 	}
 	

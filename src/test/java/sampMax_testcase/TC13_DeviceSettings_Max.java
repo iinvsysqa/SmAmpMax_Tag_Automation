@@ -20,7 +20,7 @@ public class TC13_DeviceSettings_Max extends MobileAppWrappers {
 	StoreLogPage storelog;
 
 	@BeforeClass
-	public void startTestCase() {
+	public void deviceSettings() {
 		testCaseName = "TC13_DeviceSettings_Max";
 		testDescription = "Remove the Added Router Details Test Case";
 	}

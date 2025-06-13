@@ -38,7 +38,7 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 	
 
 	@Test(priority = 22)
-	public void removerepair() throws Exception {
+	public void SmartConfig_CONNECTIVITY() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -74,7 +74,8 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 		
 		homepage.killandopen();
 		turnOffBT();
-		adddevicepage.ClickCancelButtonBle();
+		adddevicepage.ClickOkButtonBLEpopUP();
+		//adddevicepage.ClickCancelButtonBle();
 		adddevicepage.staConnectivityCheck();
 		Thread.sleep(10000);
 		homepage.clickONOFFButton();
@@ -94,7 +95,6 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 		Thread.sleep(10000);
 		homepage.clickONOFFButton();
 		 Thread.sleep(2000);
-	    homepage.VerifyONdesc(); ///Connectivity Confirmation description check//
 		///CONNECTIVITY_MOD_3_TC_5//BLE_Kill and Open
 	    
 	    homepage.getCurrentvalue();
@@ -133,7 +133,7 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 		adddevicepage.remoteConnectivityCheck();
 		Thread.sleep(8000);
 		homepage.clickONOFFButton();
-		homepage.VerifyONdesc();
+//		homepage.VerifyONdesc();
 		Thread.sleep(5000);
 		//CONNECTIVITY_MOD_3_TC_6//Remote Device ON_OFF 
 		

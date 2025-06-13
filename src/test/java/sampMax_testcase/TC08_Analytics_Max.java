@@ -25,7 +25,7 @@ public class TC08_Analytics_Max extends MobileAppWrappers {
 	
 }
 	@Test(priority = 7)
-	public void removerepair() throws Exception {
+	public void AnalyticsBLEWithoutRouter() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -53,9 +53,9 @@ public class TC08_Analytics_Max extends MobileAppWrappers {
 		
 		Thread.sleep(3000);
 		
-		homepage.clickONOFFButton();
-		Thread.sleep(60000);
-		homepage.clickONOFFButton();
+		//homepage.clickONOFFButton();
+		//Thread.sleep(60000);
+		//homepage.clickONOFFButton();
 		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();

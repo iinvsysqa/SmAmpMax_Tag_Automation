@@ -35,7 +35,7 @@ public class TC05_SignIn_SuccessFlow_Max extends MobileAppWrappers{
 }
 	
 	@Test(priority = 4)
-	public void login() throws Exception {
+	public void login_SuccessFlow() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

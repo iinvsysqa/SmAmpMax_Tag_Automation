@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Tagvalidation">
+<listeners>
+    <listener class-name="utils.RetryListener" />
+    <listener class-name="com.utils.ResultListener"/>
+</listeners>
   <test thread-count="5" name="SampMax">
     <packages>
     <package name="sampMax_testcase"></package>

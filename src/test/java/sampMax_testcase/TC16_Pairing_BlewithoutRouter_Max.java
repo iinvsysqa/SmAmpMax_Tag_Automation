@@ -34,7 +34,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 	
 //	(retryAnalyzer = Retry_analyser.class)
 	@Test(priority = 15)
-	public void removerepair() throws Exception {
+	public void pairing_BlewithoutRouter() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);
@@ -75,6 +75,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 		
 		Thread.sleep(6000);
 		homepage.clickONOFFButton();
+		Thread.sleep(2000);
 		homepage.clickONOFFButton();
 				
 		homepage.clickMenuBarButton();
@@ -103,6 +104,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdevicesettingstoast();
 		Thread.sleep(6000);
 		homepage.clickONOFFButton();
+		Thread.sleep(2000);
 		homepage.clickONOFFButton();
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();

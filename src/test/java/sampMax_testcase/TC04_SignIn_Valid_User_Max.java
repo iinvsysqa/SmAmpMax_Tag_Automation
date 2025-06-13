@@ -33,7 +33,7 @@ public class TC04_SignIn_Valid_User_Max extends MobileAppWrappers{
 		testDescription = "Try to Sign In into app with Valid user details but invalid OTP ";
 }
 	@Test(priority = 3)
-	public void login() throws Exception {
+	public void signIn_ValidUser() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

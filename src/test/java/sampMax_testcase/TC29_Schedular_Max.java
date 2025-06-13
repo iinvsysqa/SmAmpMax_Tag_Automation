@@ -34,7 +34,7 @@ public class TC29_Schedular_Max extends MobileAppWrappers{
 	}
 
 	@Test(priority = 28)
-	public void schedule() throws Exception {
+	public void Schedular_Ble_without_Router() throws Exception {
 		initAndriodDriver();
 		landingpage = new LandingPage(driver);
 		loginpage = new SignInPage(driver);
@@ -49,11 +49,6 @@ public class TC29_Schedular_Max extends MobileAppWrappers{
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
-
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -63,7 +58,7 @@ public class TC29_Schedular_Max extends MobileAppWrappers{
 		analyticspage.getenergydurationvalue();
 		schedulepage.backToHomepage();
 		schedulepage.clickSchedulebtn();
-		schedulepage.createSchedules(5, 3, 2);//mention the time to start ,how many schedules need to keep,interval between next schedule
+		schedulepage.createSchedules(5, 3, 1);//mention the time to start ,how many schedules need to keep,interval between next schedule
 		schedulepage.backToHomepage();
 		
 		Thread.sleep(9*60*1000);//set thread values based on schedule duration kept .
@@ -73,7 +68,6 @@ public class TC29_Schedular_Max extends MobileAppWrappers{
 		schedulepage.clickSchedulebtn();
 		schedulepage.deleteschedule();
 		schedulepage.backToHomepage();
-		schedulepage.checkOffState();
 		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();

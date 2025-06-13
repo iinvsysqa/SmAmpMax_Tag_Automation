@@ -36,8 +36,8 @@ public class TC24_WifiWithRouter_Max extends MobileAppWrappers{
 	}
 	
 
-	@Test(priority = 23)
-	public void removerepair() throws Exception {
+//	@Test(priority = 23)
+	public void wifiWithRouter_CONNECTIVITY() throws Exception {
 
 		
 		initAndriodDriver();
