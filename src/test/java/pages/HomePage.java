@@ -140,20 +140,20 @@ public class HomePage extends GenericWrappers{
 		   System.out.println(attribute);
 	   }
 	   
-	   public void checkConnectivity() {
+	   public void checkRemoteConnectivity() {
 		    try {
 		    	// WebDriverWait wait = new WebDriverWait(driver, 10);
 		    //	 WebElement element =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Searching for SmAmp Max to establish connection']")));
 		    	
 		        if (isElementDisplayedCheck(connectivityText)) {
-		            utils.Reporter.reportStep("Connectivity is not Established", "FAIL");
+		            utils.Reporter.reportStep("Remote Connectivity is not Established", "FAIL");
 		        } else {
 		            // This part is less likely to be hit with invisibilityOfElementLocated
-		            utils.Reporter.reportStep("Connectivity is not Established ", "PASS");
+		            utils.Reporter.reportStep("Remote Connectivity is not Established ", "PASS");
 		        }
 		    } catch (TimeoutException e) {
 		        // This exception means the element was still visible after the wait time
-		        utils.Reporter.reportStep("Connectivity is Established (Text remained visible)", "PASS");
+		        utils.Reporter.reportStep("Remote Connectivity is Established (Text remained visible)", "PASS");
 		    }
 		}
 //	   String description[]={"Searching for sZephyr to establish connection","Please ensure sZephyr is switched ON prior to operating your AC remote","Your AC unit is either in standby or powered OFF at the moment","sZephyr and AC turned ON"};

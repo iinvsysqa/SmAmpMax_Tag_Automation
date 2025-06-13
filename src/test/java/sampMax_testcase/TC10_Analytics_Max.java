@@ -54,9 +54,9 @@ public class TC10_Analytics_Max extends MobileAppWrappers{
 			homepage.WifiSwitch(loadProp("REMOTEWIFINAME"), loadProp("REMOTEWIFIPASSWORD"));
 			
 
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			
-			homepage.checkConnectivity();
+			homepage.checkRemoteConnectivity();
 			//homepage.clickONOFFButton();
 			//Thread.sleep(60000);
 			//homepage.clickONOFFButton();

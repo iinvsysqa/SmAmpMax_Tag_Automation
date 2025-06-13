@@ -48,7 +48,7 @@ public class MobileAppWrappers extends GenericWrappers {
 		
 	//	SwitchWiFi.switchwifi(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 		// Flash 1 for Smazer, 2 - Smamax, 3 - sZphyer
-	//	RunFlashScript.runFlashScript("2");
+		//RunFlashScript.runFlashScript("2");
 		
 		// Switch to IINVSYS Wifi After Flashing
 	//	SwitchWiFi.switchwifi(loadProp("REMOTEWIFINAME"), loadProp("REMOTEWIFIPASSWORD"));

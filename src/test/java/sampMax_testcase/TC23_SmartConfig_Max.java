@@ -119,7 +119,9 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 	
 		//homepage.VerifyONdesc();
 		homepage.WifiSwitch(loadProp("REMOTEWIFINAME"),loadProp("REMOTEWIFIPASSWORD"));
-		adddevicepage.remoteConnectivityCheck();
+		//adddevicepage.remoteConnectivityCheck();
+		Thread.sleep(15000);
+		homepage.checkRemoteConnectivity();
 		homepage.clickONOFFButton();
 		homepage.getCurrentvalue();
 		homepage.getVoltvalue();

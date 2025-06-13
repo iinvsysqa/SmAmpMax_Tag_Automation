@@ -32,6 +32,7 @@ public class RunFlashScript extends MobileAppWrappers {
             String[][] promptResponses = {
                 {"Select the product ID", productId + "\n"},
                 {"Select the Board Version", "5\n"},
+                {"Select eigher one partition (1/2) :", "2\n"},
                 {"Do you want flash OTA BIN?", "N\n"},
                 {"Select the Server Type", "2\n"},
                 {"Select the flash type", "1\n"},
