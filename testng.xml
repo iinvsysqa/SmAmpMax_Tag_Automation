@@ -3,7 +3,7 @@
 <suite name="Tagvalidation">
 <listeners>
     <listener class-name="utils.RetryListener" />
-    <listener class-name="com.utils.ResultListener"/>
+    <listener class-name="utils.ResultListener"/>
 </listeners>
   <test thread-count="5" name="SampMax">
     <packages>
