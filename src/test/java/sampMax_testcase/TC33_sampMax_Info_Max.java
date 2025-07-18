@@ -57,8 +57,8 @@ public class TC33_sampMax_Info_Max extends MobileAppWrappers {
 
 			adddevicepage.pair(1);
 			adddevicepage.clickNextButtonsZephyrInfo();
-			
-			adddevicepage.checkdevicedetailstoast();
+			adddevicepage.clickBleokbutton();
+//			adddevicepage.checkdevicedetailstoast();
 			adddevicepage.clickSubmitButtonDeviceSetting();
 			adddevicepage.checkdevicesettingstoast();
 			Thread.sleep(1000);

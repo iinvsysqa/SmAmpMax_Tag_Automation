@@ -66,6 +66,7 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		for(int i=0;i<2;i++) {
 			homepage.clickONOFFButton();

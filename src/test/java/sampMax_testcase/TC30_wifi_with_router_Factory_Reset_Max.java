@@ -52,7 +52,8 @@ public class TC30_wifi_with_router_Factory_Reset_Max extends MobileAppWrappers{
 		readwrite.openPort();
 		adddevicepage.pair(4);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		

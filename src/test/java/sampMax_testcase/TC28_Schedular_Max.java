@@ -52,6 +52,8 @@ public class TC28_Schedular_Max extends MobileAppWrappers{
 		readwrite.openPort();
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		Thread.sleep(5000);
 		

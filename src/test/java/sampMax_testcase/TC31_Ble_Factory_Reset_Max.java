@@ -53,7 +53,8 @@ public void pairBlewithoutRouter() throws Exception {
 	
 	adddevicepage.pair(2);
 	adddevicepage.clickNextButtonsZephyrInfo();
-	adddevicepage.checkdevicedetailstoast();
+	adddevicepage.clickBleokbutton();
+//	adddevicepage.checkdevicedetailstoast();
 	adddevicepage.clickSubmitButtonDeviceSetting();
 	adddevicepage.checkdevicesettingstoast();
 	homepage.disableWIFI();

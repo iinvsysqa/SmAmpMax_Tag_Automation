@@ -52,6 +52,8 @@ public class TC29_Schedular_Max extends MobileAppWrappers{
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
 		analyticspage.navigateAnalyticsPage();

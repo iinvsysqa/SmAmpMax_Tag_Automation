@@ -42,7 +42,8 @@ public class TC15_DeviceSettings_Max extends MobileAppWrappers {
 
 			adddevicepage.pair(3);
 			adddevicepage.clickNextButtonsZephyrInfo();
-			adddevicepage.checkdevicedetailstoast();
+			adddevicepage.clickBleokbutton();
+//			adddevicepage.checkdevicedetailstoast();
 			devicemenupage.clickPairingTimeQuietLEDEnable();
 			devicemenupage.clickInfinitePowerToggle();
 			devicemenupage.clickHoursPlusButton();

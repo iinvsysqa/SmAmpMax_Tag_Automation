@@ -51,7 +51,8 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 		try {
 		readwrite.openPort();
 		adddevicepage.pair(3);
-		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
 		homepage.clickONOFFButton();

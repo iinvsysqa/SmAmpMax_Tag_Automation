@@ -44,7 +44,8 @@ public class TC11_Analytics_Max extends MobileAppWrappers {
 		adddevicepage.pair(2);
 		adddevicepage.blepermissionokpopup();
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		

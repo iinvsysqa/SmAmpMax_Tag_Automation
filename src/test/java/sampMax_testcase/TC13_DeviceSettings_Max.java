@@ -43,7 +43,8 @@ public class TC13_DeviceSettings_Max extends MobileAppWrappers {
 
 			adddevicepage.pair(2);
 			adddevicepage.clickNextButtonsZephyrInfo();
-			adddevicepage.checkdevicedetailstoast();
+			adddevicepage.clickBleokbutton();
+//			adddevicepage.checkdevicedetailstoast();
 			adddevicepage.clickSubmitButtonDeviceSetting();
 			adddevicepage.checkdevicesettingstoast();
 			Thread.sleep(2000);

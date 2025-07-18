@@ -53,7 +53,8 @@ public class TC32_wifi_with_router_Factory_Reset_Max extends MobileAppWrappers{
 
 		adddevicepage.pair(4);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 

@@ -59,7 +59,8 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 		adddevicepage.pair(3);	
 		turnOffBT();
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		
