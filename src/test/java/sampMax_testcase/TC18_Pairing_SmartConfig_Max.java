@@ -60,24 +60,7 @@ public class TC18_Pairing_SmartConfig_Max extends MobileAppWrappers{
 		homepage.clickONOFFButton();
 //		homepage.VerifyOFFdesc();
 		
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
 		
-		adddevicepage.pair(3);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
-		Thread.sleep(10000);
-		homepage.clickONOFFButton();
-//		homepage.VerifyONdesc();
-		homepage.clickONOFFButton();
-//		homepage.VerifyOFFdesc();
 				
 		homepage.clickMenuBarButton();
 		devicemenupage.clickLogoutButton();

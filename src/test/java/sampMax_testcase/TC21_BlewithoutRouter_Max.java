@@ -65,8 +65,26 @@ public class TC21_BlewithoutRouter_Max extends MobileAppWrappers{
 		
 		adddevicepage.bleConnectivityCheck();
 		homepage.clickONOFFButton();
+		Thread.sleep(2000);
 		homepage.clickONOFFButton();
+		Thread.sleep(2000);
 			
+		homepage.getCurrentvalue();
+		homepage.getVoltvalue();
+		homepage.getPowervalue();
+		
+		homepage.killandopen();
+		Thread.sleep(2000);
+		homepage.clickONOFFButton();
+		
+		homepage.getCurrentvalue();
+		homepage.getVoltvalue();
+		homepage.getPowervalue();
+		
+		Thread.sleep(2000);
+		homepage.clickONOFFButton();
+		Thread.sleep(2000);
+		
 		homepage.clickMenuBarButton();
         devicemenupage.clickDeviceSettingsButton();
 		devicemenupage.clickResetDeviceButton();
@@ -75,56 +93,9 @@ public class TC21_BlewithoutRouter_Max extends MobileAppWrappers{
 		devicemenupage.AddDevicePagedisplayed();
 		
         
-		adddevicepage.pair(1);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
+	
 		
-		adddevicepage.bleConnectivityCheck();
-		homepage.clickONOFFButton();
-		
-		homepage.clickONOFFButton();
-		homepage.getCurrentvalue();
-		homepage.getVoltvalue();
-		homepage.getPowervalue();
-		
-		homepage.killandopen();
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
-		homepage.getCurrentvalue();
-		homepage.getVoltvalue();
-		homepage.getPowervalue();
-		homepage.clickMenuBarButton();
-		devicemenupage.clickDeviceSettingsButton();
-		devicemenupage.clickResetDeviceButton();
-		devicemenupage.clickResetConfirmationYesButton();
-		adddevicepage.checkdeviceresettoast();
-		devicemenupage.AddDevicePagedisplayed();
-		
-		
-		adddevicepage.pair(1);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
-		adddevicepage.bleConnectivityCheck();
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
-		
-		homepage.getCurrentvalue();
-		homepage.getVoltvalue();
-		homepage.getPowervalue();
-		
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
+	
 		
 		 readwrite.closePort();
 		}

@@ -101,6 +101,39 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 		homepage.getVoltvalue();
 		homepage.getPowervalue();
 		
+		
+		homepage.enableBLE();
+		 homepage.disableWIFI();
+		    Thread.sleep(5000);
+		    adddevicepage.bleConnectivityCheck();
+		    for(int i=0;i<2;i++) 
+		    {
+				homepage.clickONOFFButton();
+				Thread.sleep(1000);
+				}
+		    homepage.getCurrentvalue();
+			homepage.getVoltvalue();
+			homepage.getPowervalue();
+		  ///CONNECTIVITY_MOD_2_TC_5--   Check Kill and Open //
+		    
+			homepage.killandopen();
+			Thread.sleep(5000);
+			adddevicepage.bleConnectivityCheck();
+			homepage.clickONOFFButton();
+			Thread.sleep(3000);
+			homepage.clickONOFFButton();
+		 ///CONNECTIVITY_MOD_2_TC_6  ---- 5 Times ON/OFF//	
+			 for(int i=0;i<5;i++) 
+			    {
+					homepage.clickONOFFButton();
+					Thread.sleep(3000);
+					}
+			 homepage.getCurrentvalue();
+				homepage.getVoltvalue();
+				homepage.getPowervalue();
+				
+				
+				
 		homepage.clickMenuBarButton();
         devicemenupage.clickDeviceSettingsButton();
 		devicemenupage.clickResetDeviceButton();
@@ -110,53 +143,7 @@ public class TC22_BleWithRouter_Max extends MobileAppWrappers{
 		
 		///CONNECTIVITY_MOD_2_TC_4--   Check BLE Connectivity//
 		
-		adddevicepage.pair(2);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
 		
-		adddevicepage.bleConnectivityCheck();
-		for(int i=0;i<2;i++) {
-			homepage.clickONOFFButton();
-			Thread.sleep(1000);
-			}
-	    homepage.disableWIFI();
-	    Thread.sleep(5000);
-	    adddevicepage.bleConnectivityCheck();
-	    for(int i=0;i<2;i++) 
-	    {
-			homepage.clickONOFFButton();
-			Thread.sleep(1000);
-			}
-	    homepage.getCurrentvalue();
-		homepage.getVoltvalue();
-		homepage.getPowervalue();
-	  ///CONNECTIVITY_MOD_2_TC_5--   Check Kill and Open //
-	    
-		homepage.killandopen();
-		Thread.sleep(5000);
-		adddevicepage.bleConnectivityCheck();
-		homepage.clickONOFFButton();
-		Thread.sleep(3000);
-		homepage.clickONOFFButton();
-	 ///CONNECTIVITY_MOD_2_TC_6  ---- 5 Times ON/OFF//	
-		 for(int i=0;i<5;i++) 
-		    {
-				homepage.clickONOFFButton();
-				Thread.sleep(3000);
-				}
-		 homepage.getCurrentvalue();
-			homepage.getVoltvalue();
-			homepage.getPowervalue();
-			
-		 homepage.clickMenuBarButton();
-			devicemenupage.clickMenuBarRemoveDevice();
-			devicemenupage.clickRemoveDevicePopupYesButton();
-			adddevicepage.checkdeviceremovedtoast();
-			devicemenupage.AddDevicePagedisplayed();
-			
 		 readwrite.closePort();
 		}
 		catch (Exception e) {

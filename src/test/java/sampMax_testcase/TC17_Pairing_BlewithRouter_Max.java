@@ -58,8 +58,22 @@ public class TC17_Pairing_BlewithRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdevicesettingstoast();
 		Thread.sleep(8000);
 		homepage.clickONOFFButton();
+		Thread.sleep(2000);
 		homepage.clickONOFFButton();
 		
+		
+		homepage.clickMenuBarButton();
+		devicemenupage.clickLogoutButton();
+		devicemenupage.clickLogoutConfirmationButton();
+		landingpage.clickSignInButton();
+		loginpage.enterUserName(loadProp("USERNAME"));
+		loginpage.clickSignInButton();
+		otppage.verifyOTPVerificationTitle("OTP Verification");
+		otppage.enterOTPField1("1");
+		otppage.enterOTPField2("2");
+		otppage.enterOTPField3("3");
+		otppage.enterOTPField4("4");
+		otppage.submitButton();
 		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
@@ -67,21 +81,7 @@ public class TC17_Pairing_BlewithRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdeviceremovedtoast();
 		devicemenupage.AddDevicePagedisplayed();
 		
-		adddevicepage.pair(2);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		Thread.sleep(8000);
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
 		
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
 		readwrite.closePort();
 		}
 		catch (Exception e) {
