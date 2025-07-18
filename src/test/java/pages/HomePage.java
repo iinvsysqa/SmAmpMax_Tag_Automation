@@ -116,6 +116,11 @@ public class HomePage extends GenericWrappers{
 			Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
 		   if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 				driver.activateApp(packages); 
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.POST_NOTIFICATIONS");
 				// Bring it back
 //				Thread.sleep(3000);
 			}

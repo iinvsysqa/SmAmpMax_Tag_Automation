@@ -69,7 +69,7 @@ public class StoreLogPage extends GenericWrappers{
 			@FindBy(xpath = "//*[@resource-id='com.android.permissioncontroller:id/permission_allow_button']")
 			private WebElement nearByPermisson;
 		
-		public void storeLogToDownloads() {
+		public void storeLogToDownloads() throws IOException {
 			turnOnBT();
 			killAndReopenApp();
 			if (isElementDisplayedCheck(menuBarButton)) {
@@ -89,9 +89,11 @@ public class StoreLogPage extends GenericWrappers{
 				entervaluebyXpath(otpField4, " OTP Box 4 " , "4");
 				clickbyXpath(submitBtn," Submit Button ");
 				
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.ACCESS_FINE_LOCATION"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_SCAN"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_CONNECT"));
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.POST_NOTIFICATIONS");
 //				if (isElementDisplayedCheck(locationPopUp)) {
 //					clickbyXpath(locationPopUp, "Location pop-up");
 //				} else {
@@ -129,6 +131,11 @@ public class StoreLogPage extends GenericWrappers{
 //		    Runtime.getRuntime().exec("adb pull /storage/emulated/0/Download/sZephyrLOG.txt "+projectRoot+"/sZephyrLOG.txt");
 		    if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 				driver.activateApp(packages); 
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.POST_NOTIFICATIONS");
 			}
 			}
 		
