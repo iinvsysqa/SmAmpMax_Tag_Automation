@@ -97,8 +97,8 @@ public class MobileAppWrappers extends GenericWrappers {
 	public void afterSuite(){
 		Reporter.endResult();
 		System.out.println("Test suite finished. Closing output redirection.");
-        fileOut.close();
-        System.setOut(originalOut);
+//        fileOut.close();
+//        System.setOut(originalOut);
         RunRelayFromPython.powerOndeviceViaRelay("off");
 	}
 

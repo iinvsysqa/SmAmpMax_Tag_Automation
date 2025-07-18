@@ -73,6 +73,7 @@ public class TC33_sampMax_Info_Max extends MobileAppWrappers {
 			adddevicepage.SampmaxInfoButtonClick();
 			adddevicepage.enterSampMaxDevcieName(loadProp("USERNAME"));
 			adddevicepage.MaxinfoSaveButton();
+			adddevicepage.clickBleokbutton();
 			adddevicepage.MaxBackButton();
 			Thread.sleep(1000);
 

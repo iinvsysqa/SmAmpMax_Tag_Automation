@@ -45,6 +45,9 @@ public class TC17_Pairing_BlewithRouter_Max extends MobileAppWrappers{
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		storelog= new StoreLogPage(driver);
+		landingpage=new LandingPage(driver);
+		loginpage=new SignInPage(driver);
+		otppage=new OtpPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -75,6 +78,9 @@ public class TC17_Pairing_BlewithRouter_Max extends MobileAppWrappers{
 		otppage.enterOTPField4("4");
 		otppage.submitButton();
 		
+		
+		
+		Thread.sleep(3000);
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
 		devicemenupage.clickRemoveDevicePopupYesButton();

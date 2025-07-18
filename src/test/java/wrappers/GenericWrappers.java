@@ -506,6 +506,11 @@ public class GenericWrappers {
 			
 				// Kill the app (terminate it)
 				driver.activateApp(packages);
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.smampmax android.permission.POST_NOTIFICATIONS");
 				Reporter.reportStep("The app was opened successfully.", "PASS");
 			
 		} catch (Exception e) {
