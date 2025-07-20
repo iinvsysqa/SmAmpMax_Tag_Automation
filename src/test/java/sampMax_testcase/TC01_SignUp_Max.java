@@ -46,7 +46,7 @@ public class TC01_SignUp_Max extends MobileAppWrappers{
 		try {
 		readwrite.openPort();
 
-		
+		signuppage.uninstall_reinstall();
 		landingpage.clickSignUpLink();
 
 		

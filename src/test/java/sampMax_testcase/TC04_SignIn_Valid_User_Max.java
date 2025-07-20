@@ -45,6 +45,7 @@ public class TC04_SignIn_Valid_User_Max extends MobileAppWrappers{
 		try {
 		readwrite.openPort();
 		
+		signuppage.uninstall_reinstall();
 		landingpage.clickSignInButton();
 		loginpage.enterUserName(loadProp("USERNAME"));
 		loginpage.clickSignInButton();

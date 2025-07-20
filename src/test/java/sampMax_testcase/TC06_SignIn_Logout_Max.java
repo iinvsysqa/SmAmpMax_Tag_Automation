@@ -50,6 +50,7 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 		try {
 		readwrite.openPort();
 		
+		signuppage.uninstall_reinstall();
 		landingpage.clickSignInButton();
 		driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.smampmax android.permission.ACCESS_FINE_LOCATION"));
 		driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.smampmax android.permission.BLUETOOTH_SCAN"));

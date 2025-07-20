@@ -40,6 +40,7 @@ public class TC03_SignIn_Flow_Max extends MobileAppWrappers{
 		try {
 		readwrite.openPort();
 		
+		signuppage.uninstall_reinstall();
 		landingpage.clickSignInButton();
 		double rand=Math.random()*100000000;
 		signinpage.enterUserName("user"+(int)rand);

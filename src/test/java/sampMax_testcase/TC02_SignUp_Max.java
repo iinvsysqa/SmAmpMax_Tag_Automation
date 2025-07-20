@@ -47,6 +47,7 @@ public class TC02_SignUp_Max extends MobileAppWrappers{
 		try {
 		readwrite.openPort();
 		
+		signuppage.uninstall_reinstall();
 		landingpage.clickSignUpLink();
 		double rand=Math.random()*10000000;
 		signuppage.enterUserName("testuser"+(int)rand);

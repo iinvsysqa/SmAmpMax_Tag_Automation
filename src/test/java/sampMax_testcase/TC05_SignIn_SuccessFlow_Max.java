@@ -51,6 +51,7 @@ public class TC05_SignIn_SuccessFlow_Max extends MobileAppWrappers{
 		try {
 		readwrite.openPort();
 		
+		signuppage.uninstall_reinstall();
 		landingpage.clickSignInButton();
 		loginpage.enterUserName(loadProp("USERNAME"));
 		loginpage.clickSignInButton();
