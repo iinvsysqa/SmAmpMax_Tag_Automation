@@ -43,8 +43,8 @@ import com.aventstack.extentreports.Status;
 
 	        // Write if it is successful or failure or information
 	        if (tcstatus.toUpperCase().equals("PASS")) {
-	            test.pass(desc, MediaEntityBuilder.createScreenCaptureFromBase64String(screenshotBase64).build());
-//	            test.pass(desc);
+//	            test.pass(desc, MediaEntityBuilder.createScreenCaptureFromBase64String(screenshotBase64).build());
+	            test.pass(desc);
 	        } else if (tcstatus.toUpperCase().equals("FAIL")) {
 	            test.fail(desc, MediaEntityBuilder.createScreenCaptureFromBase64String(screenshotBase64).build());
 	            throw new RuntimeException("FAILED");

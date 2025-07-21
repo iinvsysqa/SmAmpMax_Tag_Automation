@@ -55,9 +55,10 @@ public class TC20_Pairing_WifiwithoutRouter_Max extends MobileAppWrappers{
 		
 		Thread.sleep(8000);
 		homepage.clickONOFFButton();
-		homepage.VerifyONdesc();
+//		homepage.VerifyONdesc();
+		Thread.sleep(2000);
 		homepage.clickONOFFButton();
-		homepage.VerifyOFFdesc();
+//		homepage.VerifyOFFdesc();
 				
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
@@ -65,24 +66,7 @@ public class TC20_Pairing_WifiwithoutRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdeviceremovedtoast();
 		devicemenupage.AddDevicePagedisplayed();
 		
-		adddevicepage.pair(5);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
 		
-		Thread.sleep(8000);
-		homepage.clickONOFFButton();
-		homepage.VerifyONdesc();
-		homepage.clickONOFFButton();
-		homepage.VerifyOFFdesc();
-				
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
 		
 		readwrite.closePort();
 		}

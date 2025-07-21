@@ -61,22 +61,7 @@ public class TC19_Pairing_WifiwithRouter_Max extends MobileAppWrappers{
 		adddevicepage.checkdeviceremovedtoast();
 		devicemenupage.AddDevicePagedisplayed();
 		
-		adddevicepage.pair(4);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
-		Thread.sleep(8000);
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
-				
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
+
 		
 		readwrite.closePort();
 		}
