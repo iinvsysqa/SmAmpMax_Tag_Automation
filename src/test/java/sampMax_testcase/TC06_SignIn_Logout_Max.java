@@ -35,7 +35,7 @@ public class TC06_SignIn_Logout_Max extends MobileAppWrappers{
 		testDescription = "After Login, Pair with device and logout from device is working";
 }
 	@Test(priority = 5)
-	public void signInandSignOutFlow() throws Exception {
+	public void TC06_SignIN_Logout() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

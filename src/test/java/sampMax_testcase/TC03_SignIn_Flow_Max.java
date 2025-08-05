@@ -28,7 +28,7 @@ public class TC03_SignIn_Flow_Max extends MobileAppWrappers{
 		testDescription = "Try to Sign In with unregistered username";
 }
 	@Test(priority = 2)
-	public void signIn() throws Exception {
+	public void TC03_SignIn_Flow() throws Exception {
 		initAndriodDriver();
 		signinpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

@@ -34,7 +34,7 @@ public class TC27_Schedular_Max extends MobileAppWrappers{
 	}
 
 	@Test(priority = 26)
-	public void Schedular_Smartconfig_App_Close() throws Exception {
+	public void TC27_Schedular_Smartconfig_App_Close() throws Exception {
 		initAndriodDriver();
 		landingpage = new LandingPage(driver);
 		loginpage = new SignInPage(driver);

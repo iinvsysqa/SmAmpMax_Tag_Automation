@@ -31,7 +31,7 @@ public class TC20_Pairing_WifiwithoutRouter_Max extends MobileAppWrappers{
 
 
 //	@Test(priority = 19)
-	public void pairingWithoutRouter() throws Exception {
+	public void TC10_PairingWithoutRouter() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

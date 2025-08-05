@@ -29,7 +29,7 @@ public class TC10_Analytics_Max extends MobileAppWrappers{
 	}
 
 	@Test(priority = 9)
-	public void analyticsofflineSession() throws Exception {
+	public void TC10_analyticsofflineSession() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

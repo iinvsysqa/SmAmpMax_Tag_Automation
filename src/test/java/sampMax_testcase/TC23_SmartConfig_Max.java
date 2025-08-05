@@ -38,7 +38,7 @@ public class TC23_SmartConfig_Max extends MobileAppWrappers{
 	
 
 	@Test(priority = 22)
-	public void SmartConfig_CONNECTIVITY() throws Exception {
+	public void TC23_SmartConfig_CONNECTIVITY() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

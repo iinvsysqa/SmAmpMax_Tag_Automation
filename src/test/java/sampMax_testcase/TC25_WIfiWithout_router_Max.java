@@ -37,7 +37,7 @@ public class TC25_WIfiWithout_router_Max extends MobileAppWrappers{
 
 
 //	@Test(priority = 24)
-	public void wifi_without_router_Connectivity() throws Exception {
+	public void TC25_Wifi_without_router_Connectivity() throws Exception {
 		initAndriodDriver();
 		wifiwithoutrouter();
 

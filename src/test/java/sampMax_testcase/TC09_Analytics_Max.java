@@ -28,7 +28,7 @@ public class TC09_Analytics_Max extends MobileAppWrappers{
 
 }
 	@Test(priority = 8)
-	public void analyticsRemoteCheck() throws Exception {
+	public void TC09_analyticsRemoteCheck() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

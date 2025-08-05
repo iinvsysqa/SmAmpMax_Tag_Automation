@@ -26,7 +26,7 @@ public class TC13_DeviceSettings_Max extends MobileAppWrappers {
 	}
 
 	@Test(priority = 12)
-	public void removerepair() throws Exception {
+	public void TC13_DeviceSettings_RemoveRouter() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

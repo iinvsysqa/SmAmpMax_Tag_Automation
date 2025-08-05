@@ -34,7 +34,7 @@ public class TC16_Pairing_BlewithoutRouter_Max extends MobileAppWrappers{
 	
 //	(retryAnalyzer = Retry_analyser.class)
 	@Test(priority = 15)
-	public void pairing_BlewithoutRouter() throws Exception {
+	public void TC16_Pairing_BlewithoutRouter() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

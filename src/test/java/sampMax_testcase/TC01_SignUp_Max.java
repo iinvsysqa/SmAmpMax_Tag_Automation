@@ -33,7 +33,7 @@ public class TC01_SignUp_Max extends MobileAppWrappers{
 }
 
 	@Test(priority = 0)
-	public void signUp() throws Exception {
+	public void TC01_SignUp_Check() throws Exception {
 
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);

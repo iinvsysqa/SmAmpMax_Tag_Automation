@@ -34,7 +34,7 @@ public class TC28_Schedular_Max extends MobileAppWrappers{
 	}
 	
 	@Test(priority = 28)
-	public void Schedular_Ble_without_router() throws Exception {
+	public void TC28_Schedular_Ble_without_router() throws Exception {
 		initAndriodDriver();
 
 		homepage=new HomePage(driver);

@@ -24,7 +24,7 @@ public class TC14_DeviceSettings_Max extends MobileAppWrappers {
 	}
 
 	@Test(priority = 13)
-	public void deviceSettings() throws Exception {
+	public void TC14_DeviceSettings_LED_Check() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

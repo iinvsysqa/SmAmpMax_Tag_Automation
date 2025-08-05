@@ -25,7 +25,7 @@ public class TC08_Analytics_Max extends MobileAppWrappers {
 	
 }
 	@Test(priority = 7)
-	public void AnalyticsBLEWithoutRouter() throws Exception {
+	public void TC08_AnalyticsBLEWithoutRouter() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

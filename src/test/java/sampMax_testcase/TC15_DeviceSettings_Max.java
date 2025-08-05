@@ -19,12 +19,12 @@ public class TC15_DeviceSettings_Max extends MobileAppWrappers {
 
 	@BeforeClass
 	public void startTestCase() {
-		testCaseName = "TC15_DeviceSettings_Pairing TIme Settings change";
+		testCaseName = "TC15_DeviceSettings_Pairing Time Settings change";
 		testDescription = "Pairing Time Change the Device Setting Value And Check MenuBar Device Settings Page Reflect The Same";
 	}
 
 	@Test(priority = 14)
-	public void deviceSettings() throws Exception {
+	public void TC15_DeviceSettings_Pairing_Time_Changes() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

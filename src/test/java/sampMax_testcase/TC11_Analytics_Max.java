@@ -25,7 +25,7 @@ public class TC11_Analytics_Max extends MobileAppWrappers {
 	
 }
 	@Test(priority = 10)
-	public void analyticsSmartConfig() throws Exception {
+	public void TC11_analyticsSmartConfig() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

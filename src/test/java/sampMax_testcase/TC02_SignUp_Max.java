@@ -35,7 +35,7 @@ public class TC02_SignUp_Max extends MobileAppWrappers{
 		testDescription = "Try to Sign Up with new username";
 }
 	@Test(priority = 1)
-	public void signUp() throws Exception {
+	public void TC02_SignUp_NewUser() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

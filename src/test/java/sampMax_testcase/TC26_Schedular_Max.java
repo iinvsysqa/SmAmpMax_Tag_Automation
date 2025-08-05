@@ -34,7 +34,7 @@ public class TC26_Schedular_Max extends MobileAppWrappers{
 	}
 	
 	@Test(priority = 25)
-	public void Schedular_Smartconfig() throws Exception {
+	public void TC26_Schedular_Smartconfig() throws Exception {
 		initAndriodDriver();
 
 		homepage=new HomePage(driver);

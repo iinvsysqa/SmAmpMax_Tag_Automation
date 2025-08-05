@@ -27,14 +27,14 @@ public class TC31_Ble_Factory_Reset_Max extends MobileAppWrappers{
 	
 	@BeforeClass
 	public void startTestCase() {
-		testCaseName = "TC31_Ble_without Factory Reset";
+		testCaseName = "TC31_Ble_with Router Factory Reset";
 		testDescription = "Paired with device Ble with Router mode and Switch to Ble then try to do factory reset using via app";
 	}
 
 
 
 @Test(priority = 30)
-public void Ble_without_Factory_Reset() throws Exception {
+public void TC31_Ble_with_Router_Factory_Reset() throws Exception {
 	initAndriodDriver();
 	pairBlewithoutRouter();
 }
